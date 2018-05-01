@@ -1,0 +1,10 @@
+a=10
+b=20
+c=a+b
+d=a-b
+d
+e=c+d
+f=c-d
+a="divya"
+sd=40
+install.packages("forecast")
