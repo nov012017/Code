@@ -1,0 +1,82 @@
+Field|Type|Level|Significance with Sales Price|Missing Values|Action|Reason||
+Id|Int||||Deleted|Unique values Present||
+MSSubClass|Factor|14||No||There is a high variance with the sale price||Identifies the type of dwelling involved in the sale.
+MSZoning|Factor|5||No||There is a high variance with the sale price||Identifies the general zoning classification of the sale.
+LotFrontage|Int|||||||
+LotArea|Int|||||||
+Street|Factor|2||No||There is a high variance with the sale price|Pave street will have more saleprice when compared to gravel|Type of road access to property
+Alley|Factor|3||Yes|Delete|About 93% of the data representing only one column and hence there is no much variance we are getting out of this column|"home_est[is.na(home_est$Alley)==1,""Alley""]=""No Alley"""|Type of alley access to property
+LotShape|Factor|4||No||There is a high variance with the sale price|| General shape of property
+LandContour|Factor||||Delete|About 89% of the data representing only one column and hence there is no much variance we are getting out of this column||Flatness of the property
+Utilities|Factor||||Delete|About 99.99% of the data representing only one column and hence there is no much variance we are getting out of this column||Type of utilities available
+LotConfig|Factor||5|No||There is a high variance with the sale price||Lot configuration
+LandSlope|Factor||||Delete|About 94% of the data representing only one column and hence there is no much variance we are getting out of this column||Slope of property
+Neighborhood|Factor|||||There is a high variance with the sale price||Physical locations within Ames city limits (map available)
+Condition1|Factor||||Delete|About 84% of the data representing only one column and hence there is no much variance we are getting out of this column||Proximity to various conditions
+Condition2|Factor||||Delete|About 99% of the data representing only one column and hence there is no much variance we are getting out of this column||Proximity to various conditions (if more than one is present)
+BldgType|Factor|||||||Type of dwelling
+HouseStyle|Factor|||||There is a high variance with the sale price||
+OverallQual|Int|||||||
+OverallCond|Int|||||||
+YearBuilt|Int|||||||
+YearRemodAdd|Int|||||||
+RoofStyle|Factor|||||||
+RoofMatl|Factor|||||About 99% of the data representing only one column and hence there is no much variance we are getting out of this column||
+Exterior1st|Factor|||||||
+Exterior2nd|Factor|||||||
+MasVnrType|Factor|||||||
+MasVnrArea|Int|||||||
+ExterQual|Factor|||||||
+ExterCond|Factor|||||||
+Foundation|Factor|||||||
+BsmtQual|Factor|||Yes||We should handle missing values||
+BsmtCond|Factor|||||About 95% of the data representing only one column and hence there is no much variance we are getting out of this column||
+BsmtExposure|Factor|||||||
+BsmtFinType1|Factor|||||||
+BsmtFinSF1|Int|||||||
+BsmtFinType2|Factor|||||About 95% of the data representing only one column and hence there is no much variance we are getting out of this column||
+BsmtFinSF2|Int|||||||
+BsmtUnfSF|Int|||||||
+TotalBsmtSF|Int|||||||
+Heating|Factor|||||About 99% of the data representing only one column and hence there is no much variance we are getting out of this column||
+HeatingQC|Factor|||||||
+CentralAir|Factor|||||About 99% of the data representing only one column and hence there is no much variance we are getting out of this column||
+Electrical|Factor|||||About 99% of the data representing only one column and hence there is no much variance we are getting out of this column||
+X1stFlrSF|Int|||||||
+X2ndFlrSF|Int|||||||
+LowQualFinSF|Int|||||||
+GrLivArea|Int|||||||
+BsmtFullBath|Discrete|||||||
+BsmtHalfBath|Discrete||||Delete|99% of the data belong to only one class||
+FullBath|Discrete|||||||
+HalfBath|Discrete|||||||
+BedroomAbvGr|Int|||||||
+KitchenAbvGr|Int|||||||
+KitchenQual|Factor|||||||
+TotRmsAbvGrd|Int|||||||
+Functional|Factor|||||About 99% of the data representing only one column and hence there is no much variance we are getting out of this column||
+Fireplaces|Int|||||||
+FireplaceQu|Factor|||||||
+GarageType|Factor|||||||
+GarageYrBlt|Int|||||||
+GarageFinish|Factor|||||||
+GarageCars|Int|||||||
+GarageArea|Int|||||||
+GarageQual|Factor|||||About 99% of the data representing only one column and hence there is no much variance we are getting out of this column||
+GarageCond|Factor|||||About 99% of the data representing only one column and hence there is no much variance we are getting out of this column||
+PavedDrive|Factor|||||About 99% of the data representing only one column and hence there is no much variance we are getting out of this column||
+WoodDeckSF|Int|||||||
+OpenPorchSF|Int|||||||
+EnclosedPorch|Int|||||||
+X3SsnPorch|Int|||||||
+ScreenPorch|Int|||||||
+PoolArea|Int|||||||
+PoolQC|Factor|||||About 99% of the data representing only one column and hence there is no much variance we are getting out of this column||
+Fence|Factor|||Yes||About 99% of the data representing only one column and hence there is no much variance we are getting out of this column||
+MiscFeature|Factor|||Yes||About 99% of the data representing only one column and hence there is no much variance we are getting out of this column||
+MiscVal|Int|||||||
+MoSold|Int|||||||
+YrSold|Int|||||||
+SaleType|Factor|||||About 99% of the data representing only one column and hence there is no much variance we are getting out of this column||
+SaleCondition|Factor|||||About 90% of the data representing only one column and hence there is no much variance we are getting out of this column||
+SalePrice|Int|||||||
