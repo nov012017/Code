@@ -1,3 +1,4 @@
+#install.packages("caret")
 library(ISLR)
 data("Default")
 
@@ -29,7 +30,7 @@ library(caret)
 
 fancyRpartPlot(dtree)
 
-setwd("D:/AP/baging and  RF")
+setwd("C:\\Users\\KASTU1\\Desktop\\Analytics Path\\R\\Data")
 
 credit = read.csv("credit.csv")
 
@@ -64,7 +65,7 @@ table( test$default, test$pred)
 printcp(dtree1)
 
 
-tree2 = prune( dtree1, cp =0.010246 )
+tree2 = prune( dtree1, cp =0.011299)
 
 fancyRpartPlot(tree2)
 
