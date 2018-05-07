@@ -1,7 +1,7 @@
-setwd("D:/AP/baging and  RF")
+setwd("C:\\Users\\KASTU1\\Desktop\\Analytics Path\\R\\Data")
 
 df1 = read.csv("Churn.csv")
-head(df1)
+head(df1)x``
 
 names(df1)
 
@@ -13,6 +13,8 @@ table(df1$Churn)
 
 prop.table(table(df1$Churn))
 
+
+
 set.seed(1234)
 
 ids = sample(nrow(df1), nrow(df1)*0.8)
@@ -23,6 +25,7 @@ test = df1[-ids,]
 ### cart model 
 library(rpart)
 churntree = rpart( Churn ~ ., data=train, method="class")
+churntree$terms
 
 library(rpart)				        # Popular decision tree algorithm
 library(rattle)					# Fancy tree plot

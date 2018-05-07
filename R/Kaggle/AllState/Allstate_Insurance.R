@@ -104,7 +104,7 @@ trainex2$changelog <- changelog
 customerstability <- trainex %>% group_by(customer_ID) %>%
   summarise(quotes=n(), uniqueplans=n_distinct(plan),
             stability=(quotes-uniqueplans+1)/quotes)
-trainex2$stability <- customerstability$stability
+trainex2$stability <- customerstability
 
 # compute "planfreq" feature on trainex2
 nrowtrainex2 <- nrow(trainex2)
