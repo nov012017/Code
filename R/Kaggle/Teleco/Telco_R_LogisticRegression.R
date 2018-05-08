@@ -15,12 +15,13 @@ preprocess <- function(data) {
   ## We should not take decision by comparing old and new customers and hence droping total charges
   data$TotalCharges=NULL
   data$tenure=NULL
-  
+  data$OnlineSecurity=NULL
   data$Dependents=NULL
   data$MultipleLines=NULL
   data$StreamingMovies=NULL
   data$DeviceProtection=NULL
-  data$SeniorCitizen=NULL
+  data$SeniorCitizen=as.factor(data$SeniorCitizen)
+  #data$SeniorCitizen=NULL
   data$PaymentMethod=NULL
   ### Replacing
   ## data_preprop1=data.frame(data[,c("TechSupport","StreamingTV","DeviceProtection","OnlineBackup","OnlineSecurity")])
@@ -52,13 +53,14 @@ preprocess <- function(data) {
       telco$MonthlyCharges_der[i]="Very High"
     }
   }
+  
   return(data)
 }
 
 telco <- preprocess(telco)
 
-
 #######  Sampling #########
+set.seed(123)
 rows= 1:nrow(telco)
 trainRows = sample(rows,round(0.7*nrow(telco)))
 testrows<-rows[-trainRows]
@@ -67,13 +69,14 @@ telco_test<-telco[testrows,]
 ###################################################
 
 
+
 ##### Applying model
 
 model1=glm(Churn~.-MonthlyCharges,data=telco_train,family = binomial(link = "logit"))
 summary(model1)
 Predicted_model1 <- predict(model1,telco_train,type="response")
 telco_train$Predicted_model1=Predicted_model1
-telco_train$Predicted_model1_pred = ifelse(telco_train$Predicted_model1 > 0.5,1,0)
+telco_train$Predicted_model1_pred = ifelse(telco_train$Predicted_model1 > 0.45,1,0)
 CM_Model1_Train=table(telco_train$Churn,telco_train$Predicted_model1_pred)
 
 TN=CM_Model1_Train[1]
@@ -82,14 +85,19 @@ FP=CM_Model1_Train[3]
 TP=CM_Model1_Train[4]
 
 Precision_Train=(TP)/(TP+FP)
+Recall_Train=(TP)/(TP+FN)
 cat("Accuracy_Train: ",Accuracy_Train=(TN+TP)/(TN+FN+FP+TP))
 cat("Precision_Train: ",Precision_Train=(TP)/(TP+FP))
 cat("Recall_Train: ",Recall_Train=(TP)/(TP+FN))
 cat("F1Score_Train: ",F1Score_Train=2*(Precision_Train*Recall_Train)/(Precision_Train+Recall_Train))
 
+library(ROCR)
+pred <- prediction(Predicted_model1,telco_train)
+perf <- performance(pred,"tpr","fpr")
+
 Predicted_model1 <- predict(model1,telco_test,type="response")
 telco_test$Predicted_model1=Predicted_model1
-telco_test$Predicted_model1_pred = ifelse(telco_test$Predicted_model1 > 0.5,1,0)
+telco_test$Predicted_model1_pred = ifelse(telco_test$Predicted_model1 > 0.45,1,0)
 CM_Model1_Test=table(telco_test$Churn,telco_test$Predicted_model1_pred)
 
 TN=CM_Model1_Test[1]
@@ -109,8 +117,6 @@ ggplot(telco,aes(MonthlyCharges))+geom_histogram()
 ggplot(telco,aes(Churn,fill=gender))+geom_bar()
 chisq.test(telco$gender,telco$Churn)
 
-
-
 #telco$gender=NULL
 ggplot(telco,aes(Churn,fill=Partner))+geom_bar()
 
@@ -122,6 +128,7 @@ table(telco$Partner,telco$Churn)
 prop.table(table(telco$Partner,telco$Churn))
 
 ggplot(telco,aes(Churn,fill=Dependents))+geom_bar()
+chisq.test(telco$Dependents,telco$Churn)
 
 ggplot(telco,aes(Churn,fill=PhoneService))+geom_bar()
 prop.table(table(telco$Churn,telco$PhoneService))
@@ -139,8 +146,13 @@ chisq.test(telco$OnlineSecurity,telco$Churn)
 ggplot(telco,aes(Churn,fill=OnlineBackup))+geom_bar()
 chisq.test(telco$OnlineBackup,telco$Churn)
 
+ggplot(telco,aes(OnlineSecurity,fill=OnlineBackup))+geom_bar()
+chisq.test(telco$OnlineBackup,telco$OnlineSecurity)
+
 ggplot(telco,aes(Churn,fill=DeviceProtection))+geom_bar()
 chisq.test(telco$DeviceProtection,telco$Churn)
+
+
 
 ggplot(telco,aes(Churn,fill=TechSupport))+geom_bar()
 chisq.test(telco$TechSupport,telco$Churn)
@@ -159,6 +171,11 @@ chisq.test(telco$PaperlessBilling,telco$Churn)
 
 ggplot(telco,aes(Churn,fill=PaymentMethod))+geom_bar()
 chisq.test(telco$PaymentMethod,telco$Churn)
+
+telco$SeniorCitizen=as.factor(telco$SeniorCitizen)
+ggplot(telco,aes(Churn,fill=SeniorCitizen))+geom_bar()
+chisq.test(telco$SeniorCitizen,telco$Churn)
+
 
 ggplot(telco,aes(Churn,fill=MonthlyCharges_der))+geom_bar()
 chisq.test(telco$MonthlyCharges_der,telco$Churn)
