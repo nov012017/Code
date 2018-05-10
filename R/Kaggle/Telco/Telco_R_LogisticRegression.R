@@ -297,6 +297,8 @@ library(ggplot2)
 ### Gender (No Variance)
   ggplot(telco_train,aes(Churn,fill=gender))+geom_bar(position = "dodge")
   chisq.test(telco_train$Churn,telco_train$gender) ## p-value = 0.3563
+  
+  table(telco_train$gender,telco_train$Churn)
   # Conclusion: Two classes cannot explain the output variable. There is no much variance. Droping the Gender Column
 ###
 ### Partner (Variance)
