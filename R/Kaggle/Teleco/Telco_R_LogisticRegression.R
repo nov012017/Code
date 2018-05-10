@@ -76,7 +76,7 @@ model1=glm(Churn~.-MonthlyCharges,data=telco_train,family = binomial(link = "log
 summary(model1)
 Predicted_model1 <- predict(model1,telco_train,type="response")
 telco_train$Predicted_model1=Predicted_model1
-telco_train$Predicted_model1_pred = ifelse(telco_train$Predicted_model1 > 0.45,1,0)
+telco_train$Predicted_model1_pred = ifelse(telco_train$Predicted_model1 > 0.1,1,0)
 CM_Model1_Train=table(telco_train$Churn,telco_train$Predicted_model1_pred)
 
 TN=CM_Model1_Train[1]
@@ -92,8 +92,9 @@ cat("Recall_Train: ",Recall_Train=(TP)/(TP+FN))
 cat("F1Score_Train: ",F1Score_Train=2*(Precision_Train*Recall_Train)/(Precision_Train+Recall_Train))
 
 library(ROCR)
-pred <- prediction(Predicted_model1,telco_train)
+pred <- prediction(Predicted_model1,telco_test$Churn)
 perf <- performance(pred,"tpr","fpr")
+plot(perf,colorize=T)
 
 Predicted_model1 <- predict(model1,telco_test,type="response")
 telco_test$Predicted_model1=Predicted_model1

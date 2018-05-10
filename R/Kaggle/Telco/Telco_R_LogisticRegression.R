@@ -187,13 +187,11 @@ ggplot(telco,aes(telco$tenure,telco$MonthlyCharges, color=Churn))+geom_point()
 ################################ Second Model ###################################
 
 
-#setwd("C:\\Users\\KASTU1\\Desktop\\Analytics Path\\R\\Data")
-setwd("C:\\Users\\Prudhvi\\Desktop\\Prudhvi\\Data Science\\Data")
+setwd("C:\\Users\\KASTU1\\Desktop\\Analytics Path\\R\\Data")
+#setwd("C:\\Users\\Prudhvi\\Desktop\\Prudhvi\\Data Science\\Data")
 options(scipen = 999)
 #setwd("C:\\Users\\Prudhvi\\Desktop\\Prudhvi\\Data Science\\Data")
 telco=read.csv("Teleco_Cust_Attr.csv")
-
-
 
 preprocess<-function(data){
   data$customerID=NULL
@@ -205,7 +203,9 @@ preprocess<-function(data){
       data$Charges[i]=data$tenure[i]/data$MonthlyCharges[i]
     }
     for (i in 1:nrow(data)){
-      data$Charges_log[i]=log(data$Charges[i])
+      if(data$Charges[i]>0){
+        data$Charges_log[i]=log(data$Charges[i])
+      }
     }
   data$tenure=NULL
   data$MonthlyCharges=NULL
@@ -236,6 +236,14 @@ preprocess<-function(data){
   return(data)
 }
 
+telco=preprocess(telco)
+Churn=telco$Churn
+telco$Churn=NULL
+library(dummies)
+telco=dummy.data.frame(telco)
+telco=telco[-c(1,3,6,8,10,12,14,16,17)]
+telco$Churn=Churn
+
 #######  Sampling #########
 set.seed(123)
 rows= 1:nrow(telco)
@@ -245,11 +253,6 @@ telco_train<-telco[trainRows,]
 telco_test<-telco[testrows,]
 ###################################################
 
-telco_train=preprocess(telco_train)
-telco_test=preprocess(telco_test)
-
-hist(telco_train$Charges_log)
-min(telco_train$Charges_log)
 
 ### Model
 
@@ -257,9 +260,9 @@ model1=glm(Churn~.-Churn-Charges,data=telco_train,family = binomial(link = "logi
 summary(model1)
 Predicted_model1 <- predict(model1,telco_train,type="response")
 telco_train$Predicted_model1=Predicted_model1
-telco_train$Predicted_model1_pred = ifelse(telco_train$Predicted_model1 > 0.44,1,0)
+telco_train$Predicted_model1_pred = ifelse(telco_train$Predicted_model1 > 0.4,1,0)
 CM_Model1_Train=table(telco_train$Churn,telco_train$Predicted_model1_pred)
-
+CM_Model1_Train
 TN=CM_Model1_Train[1]
 FN=CM_Model1_Train[2]
 FP=CM_Model1_Train[3]
@@ -272,11 +275,24 @@ cat("Precision_Train: ",Precision_Train=(TP)/(TP+FP))
 cat("Recall_Train: ",Recall_Train=(TP)/(TP+FN))
 cat("F1Score_Train: ",F1Score_Train=2*(Precision_Train*Recall_Train)/(Precision_Train+Recall_Train))
 
+Predicted_model1 <- predict(model1,telco_test,type="response")
+telco_test$Predicted_model1=Predicted_model1
+telco_test$Predicted_model1_pred = ifelse(telco_test$Predicted_model1 > 0.4,1,0)
+CM_Model1_Test=table(telco_test$Churn,telco_test$Predicted_model1_pred)
+
+TN=CM_Model1_Test[1]
+FN=CM_Model1_Test[2]
+FP=CM_Model1_Test[3]
+TP=CM_Model1_Test[4]
+
+cat("Accuracy_Test: ",Accuracy_Test=(TN+TP)/(TN+FN+FP+TP))
+cat("Precision_Test: ",Precision_Test=(TP)/(TP+FP))
+cat("Recall_Test: ",Recall_Test=(TP)/(TP+FN))
+
+
 ### EDA
 min(telco$tenure)
 min(telco$MonthlyCharges)
-
-
 library(ggplot2)
 ### Gender (No Variance)
   ggplot(telco_train,aes(Churn,fill=gender))+geom_bar(position = "dodge")
@@ -359,3 +375,9 @@ library(ggplot2)
   ggplot(telco_train,aes(Churn,fill=SeniorCitizen))+geom_bar(position = c("dodge"))
   # Conclusion: This variable is explaining the output variable. Hence considering this to be a part of the model.
 ###
+  
+a=aov(telco$tenure ~ telco$MultipleLines)
+summary(a)
+
+aov(telco$MultipleLines~telco$tenure)
+aov()
