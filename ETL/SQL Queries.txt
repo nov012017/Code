@@ -1,0 +1,74 @@
+1) Find the second highest salary in employee table
+
+select salary from employee e1 where 2= (select count(distinct salary) from employee e1 where e1.salary<e2.salary);
+
+select min(salary) from (select distinct salary from employee e order by salary desc) where rownum <=2
+
+2) Query to find the duplicate records in the table?
+select * from employee a where rowid=(select max(rowid) from employee b where a.id=b.id)
+
+3) Write a query to display the first 5 records in a table
+select * from employees e where rownum<=5
+
+4) Write a query to display the last 5 records in a table
+select * from (select * from emplyee e order by rowid desc) where rownum<=5
+
+5) Find out Rank of Employee whose Department is OBIEE and Name is rohan?
+select rank(roan,OBIEE) within group (ORDER BY name,Department) from employees;
+SELECT Employee_Name,Department_No,Salary,RANK() OVER (PARTITION BY Department_No ORDER BY Salary) “Rank” FROM EMPLOYEE;
+
+6) How to fetch 3rd highest salary using Rank Function?
+select * from (select rank() over (order by salary desc) as rnk from employees) where rnk=3;
+
+7) How Can i create table with same structure of Employee table?
+Create table Employee_1 as Select * from Employee where 1=2;
+
+8) Display last 50% records from Employee table?
+Select rownum,E.* from Employee E
+minus
+Select rownum,E.* from Employee E where rownum<=(Select count(*)/2) from Employee);
+
+9)Display first 50% records from Employee table?
+Select rownum,E.* from Employee E where rownum<=(Select count(*)/2) from Employee);
+
+10) How do i fetch only common records between 2 tables.
+Select * from Employee;
+Intersect
+Select * from Employee1;
+
+11) Find Query to get information of Employee where Employee is not assigned to the department
+Select * from Employee where Dept_no Not in(Select Department_no from Employee);
+
+12) how to write sql query for the below scenario
+I/p:ORACLE i.e, splitting into multiple columns a string using sql.
+Select Substr(‘ORACLE’,Level,1) From Dual
+Connect By Level<= Length(‘ORACLE’);
+
+13) How to fetch all the records from Employee whose joining year is  2017?
+select * from Employee where To_char(Joining_date,’YYYY’)=’2017′;
+select * from Employee where substr(convert(varchar,Joining_date,103),7,4)=’2017′;  //mysql
+
+14) What is SQL Query to find maximum salary of each department?
+Select Dept_id,max(salary) from Employee group by Dept_id;
+
+15) How Do you find all Employees with its managers?(Consider there is manager id also in Employee table)
+Select e.employee_name,m.employee name from Employee e,Employee m where e.Employee_id=m.Manager_id;
+
+16) Display the name of employees who have joined in 2016 and salary is greater than 10000?
+Select name from Employee where Hire_Date like ‘2016%’ and salary>10000;
+
+17) How to find count of duplicate rows?
+Select rollno, count (rollno) from Student 
+Group by rollno
+Having count (rollno)>1
+Order by count (rollno) desc;
+
+
+18) SELECT * FROM runners WHERE id NOT IN (SELECT winner_id FROM races WHERE winner_id IS NOT null), when nulls are included in the inner query, then the outer query will result in empty set
+
+19) UPDATE docs SET doctext=pageseq FROM docs INNER JOIN envelope ON envelope.id=docs.idnum
+WHERE EXISTS (
+  SELECT 1 FROM dbo.docs
+  WHERE id=envelope.id);
+  
+20) https://www.toptal.com/sql/interview-questions
