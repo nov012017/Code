@@ -1,3 +1,4 @@
+install.packages("titanic")
 library(titanic)
 data("titanic_train")
 head(titanic_train)
@@ -51,6 +52,8 @@ hist(titanic_train$Age)
 ## 11 What is the propability of a person with age greater than 50
 Problem11=1-pnorm(50,mean(titanic_train$Age,na.rm=T),sd(titanic_train$Age,na.rm=T))
 Problem11
+hist(titanic_train$Age)
+quantile(0.9188694,mean(titanic_train$Age,na.rm=T),sd(titanic_train$Age,na.rm=T))
 a=titanic_train[,c("Pclass","Fare")]
 
 ## 12 What is the probability of finding a person between the age of 40 and 50?
@@ -60,7 +63,7 @@ Problem11
 ## 13 What is the 75th percentile age?
 summary(titanic_train$Age)
 quantile(titanic_train$Age,probls=.75,na.rm=T)
-qnorm(0.75,mean(titanic_train$Age,na.rm=T),sd(titanic_train$Age,na.rm=T))
+qnorm(0.9188694,mean(titanic_train$Age,na.rm=T),sd(titanic_train$Age,na.rm=T))
 
 ##14 Age of the 95% of the ppl (lower(2.5%) and upper(97.5%))
 qnorm(c(0.025),mean(titanic_train$Age,na.rm=T),sd(titanic_train$Age,na.rm=T))
@@ -107,6 +110,7 @@ titanic_train$minmax=minmax(titanic_train$Age)
 
 ##18 Is there a difference in mean of age of males na dfemales on titanic?
 t.test(titanic_train$Age ~ titanic_train$Sex,alternative="greater")
+t.test(titanic_train$Age~titanic_train$Sex,alternative="two.sided")
 
 titanic_train$sex=as.factor(titanic_train$Sex)
 
