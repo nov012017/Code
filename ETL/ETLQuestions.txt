@@ -1,0 +1,10 @@
+1. What is the difference between Additive, Semi Additive, and Non additive facts?
+2. What is a factless fact table? //No measure associated with it
+3. What are conformed dimensions and conformed facts? // Re-useable dimensions
+4. What are aggregate tables?
+5. What is summary information? where the aggregation tables are kept, that is called summary layer
+6. What is datamart?
+7. What is metadata?
+8. What are the operation that cabe performed on the OLAP cude? //RollUP, Drill-Down, Slice, Dice, Pivot
+9. 
+	
