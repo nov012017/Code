@@ -1,0 +1,51 @@
+INTRODUCTION
+
+By downloading an Open HitCompanies dataset you agree to these Terms of Use. The Terms of Use are
+intended to promote the commitment of aiHit to Open HitCompanies data, to protect the aiHit's
+position and to inform you of the possibilities and limitations of using the dataset.
+
+YOUR OPEN LICENSE
+
+aiHit now grants you a worldwide, royalty-free, non-exclusive license to use and re-use the
+downloaded dataset in all current and future media and formats and for any lawful purpose. You may
+use the dataset both for non-commercial and commercial purposes. You now acknowledge that this
+license does not give you a copyright or other proprietary interest in the dataset.
+
+WE MAKE NO WARRANTY
+
+aiHit does not give you warranties or commitments on the dataset, none of any kind. By this we mean
+for example, but without limiting the total scope:
+
+    * aiHit cannot give any warranties as to the completeness, currency, or accuracy of the dataset.
+
+    * aiHit may at any time and from time to time change the dataset without personal notice.
+      Historical dataset will not be retained.
+
+    * aiHit does not guarantee that the access to the dataset will be continued.
+
+You accept this dataset on an "as-is, where is" basis and agree to use it at your own risk.
+
+CITATION
+
+You are required to mention aiHit HitCompanies (http://endb-consolidated.aihit.com/) as the source
+holder in any publication or distribution of the dataset (wholly or partly) in your future use. In
+case you distribute the dataset as a dataset, with fee or for free, in its original or in modified
+form, you are required to mention that the original dataset is freely available from the aiHit for
+everyone, under these Terms of Use, which also apply to the distributed dataset. You may not
+publicly represent or imply that aiHit is participating in, or has sponsored, approved, or endorsed
+the manner or purpose of your use of this dataset. You may not use any official trade-mark, emblem
+or logo of aiHit, or any of its other references without aiHit's prior written consent.
+
+YOUR AND OUR LIABILITY
+
+You will not sue the aiHit for anything the aiHit does or does not do in relation to the dataset and
+your use of it. aiHit is not liable for any direct or indirect damages or losses of any kind. You
+indemnify and hold harmless the aiHit for all claims of third parties, arising from your use of the
+dataset. aiHit may without prior notice wholly or partly cancel or suspend your right to use the
+dataset, as the aiHit in its sole discretion believes that your use is a breach of these
+Terms of Use, or is otherwise unlawful or harmful to others. In the event of cancellation or
+suspension, you will no longer be authorized to use the dataset and aiHit may use any means possible
+to enforce its decision. Such cancellation or suspension will not affect any person who has received
+the dataset from you and who is acting in compliance with these Terms of Use. If you breach these
+Terms of Use, you will be liable for any resulting financial or other claims, including legal fees
+arising therefrom.

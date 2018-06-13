@@ -1,0 +1,57 @@
+match_id,date,team1_id,team2_id,venue,venue_id
+2018_1,07-04-2018,MI,CSK,"Wankhede Stadium, Mumbai, Maharashtra",1
+2018_2,08-04-2018,DD,KXI,"Feroz Shah Kotla Stadium, Delhi",2
+2018_3,08-04-2018,KKR,RCB,"Eden Garden Stadium, Kolkata, West Bengal",3
+2018_4,09-04-2018,SRH,RR,"Rajiv Gandhi International Stadium, Hyderabad",4
+2018_5,10-04-2018,CSK,KKR,"M.A.Chidambaram Stadium Chennai, Tamil Nadu",5
+2018_6,11-04-2018,RR,DD,"Sawai Man Singh Stadium, Jaipur, Rajasthan",6
+2018_7,12-04-2018,SRH,MI,"Rajiv Gandhi International Stadium, Hyderabad",4
+2018_8,13-04-2018,RCB,KXI,"M.Chinnaswamy Stadium Bengaluru, Karnataka",7
+2018_9,14-04-2018,MI,DD,"Wankhede Stadium, Mumbai, Maharashtra",1
+2018_10,14-04-2018,KKR,SRH,"Eden Garden Stadium, Kolkata, West Bengal",3
+2018_11,15-04-2018,RCB,RR,"M.Chinnaswamy Stadium Bengaluru, Karnataka",7
+2018_12,15-04-2018,KXI,CSK,"Holkar Stadium Cricket Stadium, Indore, Madhya Pradesh",8
+2018_13,16-04-2018,KKR,DD,"Eden Garden Stadium, Kolkata, West Bengal",3
+2018_14,17-04-2018,MI,RCB,"Wankhede Stadium, Mumbai, Maharashtra",1
+2018_15,18-04-2018,RR,KKR,"Sawai Man Singh Stadium, Jaipur, Rajasthan",6
+2018_16,19-04-2018,KXI,SRH,"Holkar Stadium Cricket Stadium, Indore, Madhya Pradesh",8
+2018_17,20-04-2018,CSK,RR,"M.A.Chidambaram Stadium Chennai, Tamil Nadu",5
+2018_18,21-04-2018,KKR,KXI,"Eden Garden Stadium, Kolkata, West Bengal",3
+2018_19,21-04-2018,DD,RCB,"Feroz Shah Kotla Stadium, Delhi",2
+2018_20,22-04-2018,SRH,CSK,"Rajiv Gandhi International Stadium, Hyderabad",4
+2018_21,22-04-2018,RR,MI,"Sawai Man Singh Stadium, Jaipur, Rajasthan",6
+2018_22,23-04-2018,KXI,DD,"Holkar Stadium Cricket Stadium, Indore, Madhya Pradesh",8
+2018_23,24-04-2018,MI,SRH,"Wankhede Stadium, Mumbai, Maharashtra",1
+2018_24,25-04-2018,RCB,CSK,"M.Chinnaswamy Stadium Bengaluru, Karnataka",7
+2018_25,26-04-2018,SRH,KXI,"Rajiv Gandhi International Stadium, Hyderabad",4
+2018_26,27-04-2018,DD,KKR,"Feroz Shah Kotla Stadium, Delhi",2
+2018_27,28-04-2018,CSK,MI,"M.A.Chidambaram Stadium Chennai, Tamil Nadu",5
+2018_28,29-04-2018,RR,SRH,"Sawai Man Singh Stadium, Jaipur, Rajasthan",6
+2018_29,29-04-2018,RCB,KKR,"M.Chinnaswamy Stadium Bengaluru, Karnataka",7
+2018_30,30-04-2018,CSK,DD,"M.A.Chidambaram Stadium Chennai, Tamil Nadu",5
+2018_31,01-05-2018,RCB,MI,"M.Chinnaswamy Stadium Bengaluru, Karnataka",7
+2018_32,02-05-2018,DD,RR,"Feroz Shah Kotla Stadium, Delhi",2
+2018_33,03-05-2018,KKR,CSK,"Eden Garden Stadium, Kolkata, West Bengal",3
+2018_34,04-05-2018,KXI,MI,"I.S. Bindra Punjab Cricket Association Stadium, Mohali",9
+2018_35,05-05-2018,CSK,RCB,"M.A.Chidambaram Stadium Chennai, Tamil Nadu",5
+2018_36,05-05-2018,SRH,DD,"Rajiv Gandhi International Stadium, Hyderabad",4
+2018_37,06-05-2018,MI,KKR,"Wankhede Stadium, Mumbai, Maharashtra",1
+2018_38,06-05-2018,KXI,RR,"I.S. Bindra Punjab Cricket Association Stadium, Mohali",9
+2018_39,07-05-2018,SRH,RCB,"Rajiv Gandhi International Stadium, Hyderabad",4
+2018_40,08-05-2018,RR,KXI,"Sawai Man Singh Stadium, Jaipur, Rajasthan",6
+2018_41,09-05-2018,KKR,MI,"Eden Garden Stadium, Kolkata, West Bengal",3
+2018_42,10-05-2018,DD,SRH,"Feroz Shah Kotla Stadium, Delhi",2
+2018_43,11-05-2018,RR,CSK,"Sawai Man Singh Stadium, Jaipur, Rajasthan",6
+2018_44,12-05-2018,KXI,KKR,"I.S. Bindra Punjab Cricket Association Stadium, Mohali",9
+2018_45,12-05-2018,RCB,DD,"M.Chinnaswamy Stadium Bengaluru, Karnataka",7
+2018_46,13-05-2018,CSK,SRH,"M.A.Chidambaram Stadium Chennai, Tamil Nadu",5
+2018_47,13-05-2018,MI,RR,"Wankhede Stadium, Mumbai, Maharashtra",1
+2018_48,14-05-2018,KXI,RCB,"I.S. Bindra Punjab Cricket Association Stadium, Mohali",9
+2018_49,15-05-2018,KKR,RR,"Eden Garden Stadium, Kolkata, West Bengal",3
+2018_50,16-05-2018,MI,KXI,"Wankhede Stadium, Mumbai, Maharashtra",1
+2018_51,17-05-2018,RCB,SRH,"M.Chinnaswamy Stadium Bengaluru, Karnataka",7
+2018_52,18-05-2018,DD,CSK,"Feroz Shah Kotla Stadium, Delhi",2
+2018_53,19-05-2018,RR,RCB,"Sawai Man Singh Stadium, Jaipur, Rajasthan",6
+2018_54,19-05-2018,SRH,KKR,"Rajiv Gandhi International Stadium, Hyderabad",4
+2018_55,20-05-2018,DD,MI,"Feroz Shah Kotla Stadium, Delhi",2
+2018_56,20-05-2018,CSK,KXI,"M.A.Chidambaram Stadium Chennai, Tamil Nadu",5

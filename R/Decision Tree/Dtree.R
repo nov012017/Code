@@ -1,6 +1,9 @@
 setwd("C:\\Users\\KASTU1\\Desktop\\Analytics Path\\R\\Data")
 
-df1 = read.csv("Churn.csv")
+
+df1 = read.csv("Teleco_Cust_Attr_1.csv")
+table(df1$Churn)
+
 head(df1)x``
 
 names(df1)
