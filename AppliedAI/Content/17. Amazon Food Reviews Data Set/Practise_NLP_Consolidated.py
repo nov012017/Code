@@ -103,14 +103,12 @@ for i in range(len(X_POSTagged)):
             not_noun_word.append(tw[0])
     X_POSCleaned.append(' '.join(not_noun_word))
             
-
-
-lemmatizer.lemmatize('fruits')
-stemmer.stem('fruits')
-
-
-
-            
-sentence="""Hey ~`!@#$%^&*()_-=+{][]:;"'"<,>.?/\| should @be # wheh \ there is /"""
-sentence_modified=re.sub(r'[`~!@#\$%\^\&*()_\-\=+\{\[\]\}\:\;\"\'\<\>\,\.\?\/\\\|]',' ',sentence)
+word2count={}
+for i in range(len(X_POSCleaned)):
+    words=nltk.word_tokenize(X_POSCleaned[i])
+    for word in words:
+        if word not in word2count.keys():
+            word2count[word]=1
+        else:
+            word2count[word]+=1
                             
