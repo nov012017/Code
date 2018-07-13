@@ -9,6 +9,8 @@ import re
 import pickle
 import nltk
 from sklearn.datasets import load_files
+from nltk.stem import PorterStemmer
+from nltk.stem import WordNetLemmatizer
 os.chdir('C:\\Users\\Admin\\Documents\\GitHub\\Code\\AppliedAI\\Content\\17. Amazon Food Reviews Data Set\\Data\\review_polarity')
 reviews=load_files('txt_sentoken/')
 X,y=reviews['data'],reviews['target']
@@ -50,6 +52,7 @@ c=[]
 c.append(b)
 c.append(a)
 
+
 stopwords=nltk.corpus.stopwords.words('english')
 X_Defined=[]
 for i in X:
@@ -61,9 +64,52 @@ for i in X:
             sentence_cleaned.append(word)
         else:
             sentence_stopwords.append(word)
-    X_Defined.append(sentence_cleaned)
+    X_Defined.append(' '.join(sentence_cleaned))
+### Performing stemming on each of the reviews
+stemmer=PorterStemmer()
+X_Stemmed=[]
+for i in X_Defined:
+    word=[]
+    words=nltk.word_tokenize(i)
+    word=[stemmer.stem(word) for word in words]
+    X_Stemmed.append(' '.join(word))
+    
+    
+## Performing Lemmatization on each of the reviews
+lemmatizer=WordNetLemmatizer()
+X_Lemmatized=[]
+for i in X_Defined:
+    word=[]
+    words=nltk.word_tokenize(i)
+    word=[lemmatizer.lemmatize(word) for word in words]
+    X_Lemmatized.append(' '.join(word))
+    
+## POS Tagging
+X_POSTagged=[]
+for i in X_Defined:
+    word=[]
+    words_tagged=[]
+    words=nltk.word_tokenize(i)
+    tagged_words=nltk.pos_tag(words)
+    X_POSTagged.append(tagged_words)
 
-len(X_Defined)
+len(X_POSTagged)
+
+X_POSCleaned=[]
+for i in range(len(X_POSTagged)):
+    not_noun_word=[]
+    for tw in X_POSTagged[i]:
+        if tw[1]!='NN':
+            not_noun_word.append(tw[0])
+    X_POSCleaned.append(' '.join(not_noun_word))
+            
+
+
+lemmatizer.lemmatize('fruits')
+stemmer.stem('fruits')
+
+
+
             
 sentence="""Hey ~`!@#$%^&*()_-=+{][]:;"'"<,>.?/\| should @be # wheh \ there is /"""
 sentence_modified=re.sub(r'[`~!@#\$%\^\&*()_\-\=+\{\[\]\}\:\;\"\'\<\>\,\.\?\/\\\|]',' ',sentence)
