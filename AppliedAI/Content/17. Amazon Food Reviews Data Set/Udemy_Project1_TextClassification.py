@@ -69,4 +69,11 @@ coefficients=classifier.coef_
 from sklearn.metrics import confusion_matrix
 cm=confusion_matrix(sent_test,sent_pred)
 
+with open('classifier.pickle','wb') as f:
+    pickle.dump(classifier,f)
+
+with open('tfidfmodel.pickle','wb') as f:
+    pickle.dump(vectorizer,f)
+
+
 
