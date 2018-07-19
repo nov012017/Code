@@ -249,22 +249,12 @@ antonyms=[]
 for syn in wn.synsets('good'):
     for s in syn.lemmas():
         synonyms.append(s.name())
-        print('*****')
-        print(s.name())
-        print('*****')
         for a in s.antonyms():
             antonyms.append(a.name())
-            print(a.name())
-            print('*****************')
 print(set(synonyms))
 print(set(antonyms))
 
-a=Lemma('good.n.01.good')
-.antonyms()
-        
-for syn in wn.synsets('good'):
-    print(syn)
-
+## 
 
 
 
