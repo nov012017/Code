@@ -21,11 +21,11 @@ dataset=[line.lower() for line in dataset]
 vectorizer= TfidfVectorizer()
 X=vectorizer.fit_transform(dataset)
 
-print(X[0])
+print(X)
 
 lsa=TruncatedSVD(n_components=4,n_iter=100)
 lsa.fit(X)
-
+lsa.components_
 row1=lsa.components_[0]
 
 term=vectorizer.get_feature_names()
@@ -35,14 +35,15 @@ for i,comp in enumerate(lsa.components_):
     componentTerms=zip(term,comp)
     sortedTerms=sorted(componentTerms,key=lambda x:x[1], reverse=True)
     sortedTerms=sortedTerms[:10]
-    print("\nConcept ",i,":")
+    print("\nConcept ",i,":")   
     for terms in sortedTerms:
         print(terms)
     concept_words["concept "+str(i)]=sortedTerms
     
 componentTerms2=zip(term,lsa.components_[1])
 sortedTerms=sorted(componentTerms2,key=lambda x:x[1], reverse=True)
-    
+
+#dataset=["pudhvi this divya varma raju srivatsavaya","taj mahal is very good"]
 import  nltk
 sentence_score_dict={}
 for key in concept_words.keys():

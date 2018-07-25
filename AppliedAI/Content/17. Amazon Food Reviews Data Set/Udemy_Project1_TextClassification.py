@@ -15,6 +15,8 @@ import pickle
 import os
 os.chdir('C:\\Users\\Admin\\Documents\\GitHub\\Code\\AppliedAI\\Content\\17. Amazon Food Reviews Data Set\\Data\\review_polarity')
 
+os.chdir('C:\\Users\\Prudhvi\\Documents\\GitHub\\Code\\AppliedAI\\Content\\17. Amazon Food Reviews Data Set\\Data\\review_polarity')
+
 reviews=load_files('txt_sentoken/')
 X,y =reviews.data,reviews.target
 
@@ -55,6 +57,7 @@ X2=transformer.fit_transform(X1).toarray()
 from sklearn.feature_extraction.text import TfidfVectorizer
 vectorizer=TfidfVectorizer(max_features=2000,min_df=3,max_df=0.6,stop_words=stopwords.words('english'))
 X1=vectorizer.fit_transform(corpus).toarray()
+X1.get
 
 from sklearn.model_selection import train_test_split
 text_train, text_test,sent_train,sent_test=train_test_split(X1,y,test_size=0.2,random_state=0)
