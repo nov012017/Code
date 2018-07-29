@@ -90,4 +90,21 @@ ax.set_xlabel('Number of Words')
 y = mlab.normpdf( np.linspace(0,14,50), np.mean(word_counts), np.std(word_counts))
 l = ax.plot(np.linspace(0,14,50), y, 'r--', linewidth=1)
 
-monthly_counts = reindexed_data.resample('M').count()
+##PreProcessing
+small_count_vectorizer = CountVectorizer(stop_words='english', max_features=40000)
+small_text_sample = reindexed_data.sample(n=5000, random_state=0).as_matrix()
+print('Headline before vectorization: ', small_text_sample[123])
+small_document_term_matrix = small_count_vectorizer.fit_transform(small_text_sample)
+print('Headline after vectorization: \n', small_document_term_matrix[123])
+
+n_topics = 8
+from sklearn.decomposition import TruncatedSVD
+lsa_model=TruncatedSVD(n_components=n_topics)
+lsa_topic_matrix=lsa_model.fit_transform(small_document_term_matrix)
+
+lsa_keys=get_keys(lsa_topic_matrix)
+lsa_topic_matrix.shape
+
+def get_keys(topic_matrix):
+    '''returns an integer list of predicted topic categories for a given topic matrix'''
+    

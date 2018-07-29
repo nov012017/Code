@@ -20,7 +20,7 @@ dataset=[line.lower() for line in dataset]
 
 vectorizer= TfidfVectorizer()
 X=vectorizer.fit_transform(dataset)
-
+X1=X.toarray()
 print(X[0])
 
 lsa=TruncatedSVD(n_components=4,n_iter=100)
@@ -63,3 +63,4 @@ for key in concept_words.keys():
     for words_with_score in concept_words[key]:
         #print(words_with_score)
         print(words_with_score[0])
+        

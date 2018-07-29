@@ -1,2 +1,5 @@
 ## POS Tagging
 https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/featurizations-convert-text-to-numeric-vectors-1/#comment-19839
+
+## Sampling
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/central-limit-theorem/#comment-22152
