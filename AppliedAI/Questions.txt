@@ -3,3 +3,6 @@ https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/featuriz
 
 ## Sampling
 https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/central-limit-theorem/#comment-22152
+
+## QQ Plot
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/q-q-plothow-to-test-if-a-random-variable-is-normally-distributed-or-not/#comment-23983
