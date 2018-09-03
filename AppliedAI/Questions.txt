@@ -6,3 +6,6 @@ https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/central-
 
 ## QQ Plot
 https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/q-q-plothow-to-test-if-a-random-variable-is-normally-distributed-or-not/#comment-23983
+
+## Log loss
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/log-loss-1/
