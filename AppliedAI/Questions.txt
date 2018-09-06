@@ -9,3 +9,12 @@ https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/q-q-plot
 
 ## Log loss
 https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/log-loss-1/
+
+## SVM Rbf kernal
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/rbf-kernel-copy-8/#comment-28433
+
+## SVM Dual form:
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/dual-form-of-svm-formulation/#comment-28434
+
+## SVM C values
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/exercise-apply-svm-to-amazon-reviews-dataset-copy-8/
