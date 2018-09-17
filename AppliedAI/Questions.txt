@@ -18,3 +18,6 @@ https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/dual-for
 
 ## SVM C values
 https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/exercise-apply-svm-to-amazon-reviews-dataset-copy-8/
+
+## Gradient Boosting: (Log Loss calculation)
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/residuals-loss-functions-and-gradients/#comment-29500
