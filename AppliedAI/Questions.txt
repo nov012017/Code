@@ -21,3 +21,6 @@ https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/exercise
 
 ## Gradient Boosting: (Log Loss calculation)
 https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/residuals-loss-functions-and-gradients/#comment-29500
+
+##Article about handling the categorical variable with multiple levels
+https://www.datacamp.com/community/tutorials/categorical-data
