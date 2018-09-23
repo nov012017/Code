@@ -1,0 +1,58 @@
+SVM: (from sklearn.svm import SVR)
+
+1. Outliers: This is not effected with outliers
+2. Imbalanced Data: We have to treat the imbalanced data
+3. Feature Importance: We can get feature importance for linear kernal only
+4. Hyper Parameters: C, gamma, kernel
+5. Scoring Engines: Need to identify
+6. Other Parameters
+	degree: 'poly' kernal function only
+	gamma: 'rbf','poly','sigmoid'. If auto then 1/n_features. If gamma increases it will overfit (gamma=1/sigma)
+	C: c increase it will overfit (c=1/lambda)
+7. After applying model we can check the below parameters to understand the model
+	support_: Indices of vectors
+	support_vectors_: support  vecotrs
+	dual_coef_: Coefficients of the support vector in the decision function.
+	coef_:this is only available for linear kernal
+8. Correlation: 
+9. Multi Class:
+
+Decision Trees:
+1. Highly accurate
+2. Good Generalization (Low Overfitting)
+3. Interpretability
+
+Random Forest:
+ -> Random Forest cosist of several hundereds of individual decision trees
+
+Recursive Feature Impotance:
+1. Build random forest
+2. Calculate Feature Importance
+3. Remove least importance feature
+4. Repeat till a condition is met
+
+
+1. Outliers: This is not effected with outliers
+2. Imbalanced Data: 
+3. Feature Importance: 
+4. Hyper Parameters: 
+5. Scoring Engines:
+6. Other Parameters
+	
+7. After applying model we can check the below parameters to understand the model
+	
+8. Correlation: Correlated features should be removed
+
+
+Gradient Boosting Trees:
+1. Feature importance calculated in the same way as random forest
+2. Biased to highly cardinal features
+3. importance is susceptiale to correlated features
+4. interpretabilty of feature importance is not straight forward:
+	-> later trees fit to the errors of the first tress, therefore feature importance is not necessarily proportional on the influence of the feature on the outcome, 
+	    rather on the mistakes of the previous trees
+	-> Averaging across tress may not add much information on true relation between feature and target
+
+
+
+	
