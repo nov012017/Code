@@ -24,3 +24,7 @@ https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/residual
 
 ##Article about handling the categorical variable with multiple levels
 https://www.datacamp.com/community/tutorials/categorical-data
+
+
+## Row Sampling in random forest
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/bootstrapped-aggregation-bagging-intuition/#comment-31531

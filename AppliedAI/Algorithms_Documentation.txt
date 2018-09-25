@@ -1,3 +1,19 @@
+
+1. Outliers: 
+2. Imbalanced Data: 
+3. Feature Importance: 
+4. Hyper Parameters:
+5. Scoring Engines: 
+6. Other Parameters	
+7. After applying model we can check the below parameters to understand the model	
+8. Correlation:
+9. Multi Class:
+10.Scaling:
+10.One Hot Endoing:
+11. Train and Runtime Complexities:
+12. Regression/Classification: 
+
+*************************************************************************************************************************************
 SVM: (from sklearn.svm import SVR)
 
 1. Outliers: This is not effected with outliers
@@ -16,13 +32,33 @@ SVM: (from sklearn.svm import SVR)
 	coef_:this is only available for linear kernal
 8. Correlation: 
 9. Multi Class:
-
+10.Scaling:
+11. One Hot Endoing:
+12. Train and Runtime Complexities:
+13. Regression/Classification:
+*************************************************************************************************************************************
 Decision Trees:
 1. Highly accurate
 2. Good Generalization (Low Overfitting)
 3. Interpretability
 
+1. Outliers: This is not effected with outliers
+2. Imbalanced Data: We have to balance the data
+3. Feature Importance: We can get the feature importance directly from feature_importance_ method
+4. Hyper Parameters: max_depth, min_samples_split, min_samples_leaf, max_leaf_nodes
+5. Scoring Engines: Need to identify
+6. Other Parameters	
+7. After applying model we can check the below parameters to understand the model
+	oob_prediction_ 	
+8. Correlation: All the correlated features should be removed
+9. Multi Class: Works good for Multiclass
+10.Scaling: As this is not distance based algorithm, scaling is not required
+11.One Hot Endoing: It's better find some other method (Like finding probabilities etc.,)
+12. Train and Runtime Complexities:
+13. Regression/Classification: Yes/Yes
+*************************************************************************************************************************************
 Random Forest:
+https://www.analyticsvidhya.com/blog/2016/02/complete-guide-parameter-tuning-gradient-boosting-gbm-python/
  -> Random Forest cosist of several hundereds of individual decision trees
 
 Recursive Feature Impotance:
@@ -31,19 +67,21 @@ Recursive Feature Impotance:
 3. Remove least importance feature
 4. Repeat till a condition is met
 
-
-1. Outliers: This is not effected with outliers
-2. Imbalanced Data: 
-3. Feature Importance: 
-4. Hyper Parameters: 
-5. Scoring Engines:
-6. Other Parameters
-	
+1. Outliers: We should treat the outliers. This will get effected
+2. Imbalanced Data: We have to balance the data
+3. Feature Importance: We can get the feature importance directly from feature_importance_ method
+4. Hyper Parameters: number of estimaters, max_depth , max_features, max_leaf_nodes,min_samples_leaf,min_samples_split
+5. Scoring Engines: 
+6. Other Parameters: 
 7. After applying model we can check the below parameters to understand the model
-	
-8. Correlation: Correlated features should be removed
-
-
+	feature_importances_ 	
+8. Correlation: Should remove the correlated features
+9. Multi Class: Yes
+10.Scaling: Not required
+11.One Hot Endoing: Not prefered
+12. Train and Runtime Complexities:
+13. Regression/Classification: 
+*************************************************************************************************************************************
 Gradient Boosting Trees:
 1. Feature importance calculated in the same way as random forest
 2. Biased to highly cardinal features
@@ -52,6 +90,9 @@ Gradient Boosting Trees:
 	-> later trees fit to the errors of the first tress, therefore feature importance is not necessarily proportional on the influence of the feature on the outcome, 
 	    rather on the mistakes of the previous trees
 	-> Averaging across tress may not add much information on true relation between feature and target
+
+## XGBOOST
+https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/
 
 
 
