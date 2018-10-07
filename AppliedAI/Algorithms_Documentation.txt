@@ -71,7 +71,7 @@ Recursive Feature Impotance:
 2. Imbalanced Data: We have to balance the data
 3. Feature Importance: We can get the feature importance directly from feature_importance_ method
 4. Hyper Parameters: number of estimaters, max_depth , max_features, max_leaf_nodes,min_samples_leaf,min_samples_split
-5. Scoring Engines: 
+5. Scoring Engines:
 6. Other Parameters: 
 7. After applying model we can check the below parameters to understand the model
 	feature_importances_ 	
@@ -81,6 +81,7 @@ Recursive Feature Impotance:
 11.One Hot Endoing: Not prefered
 12. Train and Runtime Complexities:
 13. Regression/Classification: 
+14. Missing values:
 *************************************************************************************************************************************
 Gradient Boosting Trees:
 1. Feature importance calculated in the same way as random forest
