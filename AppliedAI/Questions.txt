@@ -30,3 +30,6 @@ https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/bootstra
 
 ## Stacking - How to calculate lift
 https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/stacking-models/#comment-31941
+
+## Model Retraining
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/retraining-models-periodically/
