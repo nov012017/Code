@@ -31,5 +31,10 @@ https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/bootstra
 ## Stacking - How to calculate lift
 https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/stacking-models/#comment-31941
 
+<<<<<<< HEAD
 ## Model Retraining
 https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/retraining-models-periodically/
+=======
+## Use Case - Cancer Prediction
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/logistic-regression-with-class-balancing/#comment-34760
+>>>>>>> 2175bbc16feb0b238aed242223528e1536575970
