@@ -38,3 +38,16 @@ https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/retraini
 ## Use Case - Cancer Prediction
 https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/logistic-regression-with-class-balancing/#comment-34760
 >>>>>>> 2175bbc16feb0b238aed242223528e1536575970
+
+## Logistic loss vs log loss
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/loss-minimization-interpretation/#comment-37293
+
+## Decision Tree: What is the use of 
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/code-samples-7/#comment-37295
+
+## Gradient boosting: Maxfeatures and sub sampling
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/gradient-boosting/#comment-37297
+
+
+## Loss in Gradient Boosting:
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/gradient-boosting/#comment-37301
