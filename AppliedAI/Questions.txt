@@ -51,3 +51,9 @@ https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/gradient
 
 ## Loss in Gradient Boosting:
 https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/gradient-boosting/#comment-37301
+
+## Kmeans - How a dunn index will be calculated for 3 or more clusters
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/metrics-for-clustering/#comment-37910
+
+## Kmeans - How to find the right k using elbow method
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/code-samples-copy-13/#comment-37916

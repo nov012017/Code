@@ -1,0 +1,22 @@
+A dynamic professional with 4+ years of experience in Software Testing, presently associated with Infosys Limited as ETL Test Engineer.
+o	Professional experience in Manual Testing, Functional testing, ETL Testing, BI Testing, Database Testing and Data warehousing concepts.
+o	Experience in Oracle 10g, 11g, Informatica, Netezza and SQL Server.
+o	Proficiency in writing Complex SQL queries to validate business logics.
+o	Created ETL test data for all ETL mapping rules to test the functionality of the Informatica graphs.
+o	Sound Knowledge and experience in Metadata and Star schema/Snowflake schema.
+o	Expertise in querying and testing RDBMS such as Oracle, MS SQL Server using SQL, PL/SQL for data integrity
+o	Tested the ETL Informatica mappings and other ETL Processes
+o	Experience in SQL and PL/SQL scripting
+o	Experience in working with Software Development team in resolving Defects, presenting the Defect Status reports, resolving requirement, and observed design inconsistencies.
+o	Experience in writing Test Scripts by decomposing Business Requirements, and developing Test Scenarios to support quality deliverables. 
+o	Analyzed Source Systems, Staging area, Fact and Dimension tables in Target D/W.
+o	Experience in using Bugzilla, JIRA and HP ALM/Quality Centre for Bug Tracking and Defect Reporting.
+o	Strong understanding of database design.
+o	Experience in creating Requirement Traceability Matrix (RTM) documents
+o	Having good applied knowledge on Black-Box test design techniques, Adhoc and Exploratory testing
+o	Clear understanding of business procedures and ability to work as an individual and as a part of a team.
+o	Strong working experience in Windows and UNIX environments
+o	Strong Analytical, Interpersonal, and Problem Solving skills.
+o	Having knowledge about SDLC, STLC and Defect life cycle
+o	Quick learner and good performer both in team and independent job environments.
+o	Good verbal and written communication skills.
