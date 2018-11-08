@@ -60,3 +60,6 @@ https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/code-sam
 
 ## New york taxi perdiction - Moving averages
 https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/simple-moving-average-2/#comment-38832
+
+## New york taxi perdiction - Train Test Split
+https://www.appliedaicourse.com/course/applied-ai-course-online/lessons/regression-models-train-test-split-features/#comment-38849
