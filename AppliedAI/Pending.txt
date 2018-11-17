@@ -1,0 +1,12 @@
+Things to Learn
+.1 Ensembling
+https://www.analyticsvidhya.com/blog/2015/09/questions-ensemble-modeling/
+2. Hypothesis Testing (ANCOVA, TTEST FTEST CHISQUARE TEST)
+https://www.analyticsvidhya.com/blog/2016/07/deeper-regression-analysis-assumptions-plots-solutions/
+3. Forward Feature Selection
+4. Regression:
+https://www.analyticsvidhya.com/blog/2016/07/deeper-regression-analysis-assumptions-plots-solutions/
+
+
+Spend 1 hr for Python Basics and Visualization
+Spend 3 hrs in Building Models
