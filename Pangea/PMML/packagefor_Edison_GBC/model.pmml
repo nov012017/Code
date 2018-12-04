@@ -1,0 +1,216 @@
+<PMML xmlns="http://www.dmg.org/PMML-4_2" version="4.2">
+    <Header description="Gradient Boosted Trees Classification">
+        <Application name="Pangea Analytics Engine" version="2.8.3.8"/>
+        <Timestamp>2018-12-04T03:38:46</Timestamp>
+    </Header>
+    <DataDictionary numberOfFields="8">
+        <DataField dataType="double" name="CCAvg" optype="continuous"/>
+        <DataField dataType="double" name="Education" optype="continuous"/>
+        <DataField dataType="double" name="Mortgage" optype="continuous"/>
+        <DataField dataType="double" name="PersonalLoan" optype="continuous"/>
+        <DataField dataType="double" name="SecuritiesAccount" optype="continuous"/>
+        <DataField dataType="double" name="CDAccount" optype="continuous"/>
+        <DataField dataType="double" name="Online1" optype="continuous"/>
+        <DataField dataType="string" name="CreditCard" optype="categorical">
+            <Value value="0"/>
+            <Value value="1"/>
+        </DataField>
+    </DataDictionary>
+    <MiningModel functionName="classification" modelName="GradientBoostTrees">
+        <MiningSchema>
+            <MiningField name="CCAvg" usageType="active"/>
+            <MiningField name="Education" usageType="active"/>
+            <MiningField name="Mortgage" usageType="active"/>
+            <MiningField name="PersonalLoan" usageType="active"/>
+            <MiningField name="SecuritiesAccount" usageType="active"/>
+            <MiningField name="CDAccount" usageType="active"/>
+            <MiningField name="Online1" usageType="active"/>
+            <MiningField name="CreditCard" usageType="predicted"/>
+        </MiningSchema>
+        <Output>
+            <OutputField dataType="string" feature="predictedValue" name="predicted_CreditCard" optype="categorical"/>
+        </Output>
+        <Segmentation multipleModelMethod="majorityVote">
+            <Segment id="1">
+                <True/>
+                <TreeModel algorithmName="gradientboost" functionName="classification" modelName="gradientboostModel" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="CCAvg" usageType="active"/>
+                        <MiningField name="Education" usageType="active"/>
+                        <MiningField name="Mortgage" usageType="active"/>
+                        <MiningField name="PersonalLoan" usageType="active"/>
+                        <MiningField name="SecuritiesAccount" usageType="active"/>
+                        <MiningField name="CDAccount" usageType="active"/>
+                        <MiningField name="Online1" usageType="active"/>
+                        <MiningField name="CreditCard" usageType="predicted"/>
+                    </MiningSchema>
+                    <Node id="1" score="0">
+                        <True/>
+                        <Node id="2" score="0">
+                            <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                            <Node id="4" score="0">
+                                <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                            </Node>
+                            <Node id="5" score="0">
+                                <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                            </Node>
+                        </Node>
+                        <Node id="3" score="1">
+                            <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                            <Node id="6" score="1">
+                                <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                            </Node>
+                            <Node id="7" score="1">
+                                <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                            </Node>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="2">
+                <True/>
+                <TreeModel algorithmName="gradientboost" functionName="classification" modelName="gradientboostModel" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="CCAvg" usageType="active"/>
+                        <MiningField name="Education" usageType="active"/>
+                        <MiningField name="Mortgage" usageType="active"/>
+                        <MiningField name="PersonalLoan" usageType="active"/>
+                        <MiningField name="SecuritiesAccount" usageType="active"/>
+                        <MiningField name="CDAccount" usageType="active"/>
+                        <MiningField name="Online1" usageType="active"/>
+                        <MiningField name="CreditCard" usageType="predicted"/>
+                    </MiningSchema>
+                    <Node id="1" score="0">
+                        <True/>
+                        <Node id="2" score="0">
+                            <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                            <Node id="4" score="0">
+                                <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                            </Node>
+                            <Node id="5" score="1">
+                                <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                            </Node>
+                        </Node>
+                        <Node id="3" score="0">
+                            <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                            <Node id="6" score="1">
+                                <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                            </Node>
+                            <Node id="7" score="0">
+                                <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                            </Node>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="3">
+                <True/>
+                <TreeModel algorithmName="gradientboost" functionName="classification" modelName="gradientboostModel" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="CCAvg" usageType="active"/>
+                        <MiningField name="Education" usageType="active"/>
+                        <MiningField name="Mortgage" usageType="active"/>
+                        <MiningField name="PersonalLoan" usageType="active"/>
+                        <MiningField name="SecuritiesAccount" usageType="active"/>
+                        <MiningField name="CDAccount" usageType="active"/>
+                        <MiningField name="Online1" usageType="active"/>
+                        <MiningField name="CreditCard" usageType="predicted"/>
+                    </MiningSchema>
+                    <Node id="1" score="0">
+                        <True/>
+                        <Node id="2" score="0">
+                            <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                            <Node id="4" score="0">
+                                <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                            </Node>
+                            <Node id="5" score="1">
+                                <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                            </Node>
+                        </Node>
+                        <Node id="3" score="0">
+                            <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                            <Node id="6" score="1">
+                                <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                            </Node>
+                            <Node id="7" score="0">
+                                <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                            </Node>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="4">
+                <True/>
+                <TreeModel algorithmName="gradientboost" functionName="classification" modelName="gradientboostModel" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="CCAvg" usageType="active"/>
+                        <MiningField name="Education" usageType="active"/>
+                        <MiningField name="Mortgage" usageType="active"/>
+                        <MiningField name="PersonalLoan" usageType="active"/>
+                        <MiningField name="SecuritiesAccount" usageType="active"/>
+                        <MiningField name="CDAccount" usageType="active"/>
+                        <MiningField name="Online1" usageType="active"/>
+                        <MiningField name="CreditCard" usageType="predicted"/>
+                    </MiningSchema>
+                    <Node id="1" score="0">
+                        <True/>
+                        <Node id="2" score="0">
+                            <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                            <Node id="4" score="0">
+                                <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                            </Node>
+                            <Node id="5" score="1">
+                                <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                            </Node>
+                        </Node>
+                        <Node id="3" score="0">
+                            <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                            <Node id="6" score="1">
+                                <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                            </Node>
+                            <Node id="7" score="0">
+                                <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                            </Node>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="5">
+                <True/>
+                <TreeModel algorithmName="gradientboost" functionName="classification" modelName="gradientboostModel" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="CCAvg" usageType="active"/>
+                        <MiningField name="Education" usageType="active"/>
+                        <MiningField name="Mortgage" usageType="active"/>
+                        <MiningField name="PersonalLoan" usageType="active"/>
+                        <MiningField name="SecuritiesAccount" usageType="active"/>
+                        <MiningField name="CDAccount" usageType="active"/>
+                        <MiningField name="Online1" usageType="active"/>
+                        <MiningField name="CreditCard" usageType="predicted"/>
+                    </MiningSchema>
+                    <Node id="1" score="0">
+                        <True/>
+                        <Node id="2" score="0">
+                            <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                            <Node id="4" score="0">
+                                <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                            </Node>
+                            <Node id="5" score="1">
+                                <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                            </Node>
+                        </Node>
+                        <Node id="3" score="0">
+                            <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                            <Node id="6" score="1">
+                                <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                            </Node>
+                            <Node id="7" score="0">
+                                <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                            </Node>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+        </Segmentation>
+    </MiningModel>
+</PMML>

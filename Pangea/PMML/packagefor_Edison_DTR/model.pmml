@@ -1,0 +1,86 @@
+<PMML xmlns="http://www.dmg.org/PMML-4_2" version="4.2">
+    <Header description="Decision Tree Classification">
+        <Application name="Pangea Analytics Engine" version="2.8.3.8"/>
+        <Timestamp>2018-12-04T03:53:08</Timestamp>
+    </Header>
+    <DataDictionary numberOfFields="13">
+        <DataField dataType="double" name="crim" optype="continuous"/>
+        <DataField dataType="double" name="zn" optype="continuous"/>
+        <DataField dataType="double" name="indus" optype="continuous"/>
+        <DataField dataType="double" name="nox" optype="continuous"/>
+        <DataField dataType="double" name="rm" optype="continuous"/>
+        <DataField dataType="double" name="age" optype="continuous"/>
+        <DataField dataType="double" name="dis" optype="continuous"/>
+        <DataField dataType="double" name="rad" optype="continuous"/>
+        <DataField dataType="double" name="tax" optype="continuous"/>
+        <DataField dataType="double" name="ptratio" optype="continuous"/>
+        <DataField dataType="double" name="black" optype="continuous"/>
+        <DataField dataType="double" name="lstat" optype="continuous"/>
+        <DataField dataType="double" name="medv" optype="continuous"/>
+    </DataDictionary>
+    <TreeModel algorithmName="DecisionTree" functionName="regression" modelName="DecisionTreeModel" splitCharacteristic="multiSplit">
+        <MiningSchema>
+            <MiningField name="crim" usageType="active"/>
+            <MiningField name="zn" usageType="active"/>
+            <MiningField name="indus" usageType="active"/>
+            <MiningField name="nox" usageType="active"/>
+            <MiningField name="rm" usageType="active"/>
+            <MiningField name="age" usageType="active"/>
+            <MiningField name="dis" usageType="active"/>
+            <MiningField name="rad" usageType="active"/>
+            <MiningField name="tax" usageType="active"/>
+            <MiningField name="ptratio" usageType="active"/>
+            <MiningField name="black" usageType="active"/>
+            <MiningField name="lstat" usageType="active"/>
+            <MiningField name="medv" usageType="predicted"/>
+        </MiningSchema>
+        <Output>
+            <OutputField dataType="string" feature="predictedValue" name="predicted_medv" optype="categorical"/>
+        </Output>
+        <Node id="1" score="24.02831325301205">
+            <True/>
+            <Node id="2" score="20.522222222222222">
+                <SimplePredicate field="rm" operator="lessOrEqual" value="6.772"/>
+                <Node id="4" score="24.22307692307692">
+                    <SimplePredicate field="lstat" operator="lessOrEqual" value="10.254999999999999"/>
+                    <Node id="8" score="29.428571428571434">
+                        <SimplePredicate field="indus" operator="lessOrEqual" value="3.16"/>
+                    </Node>
+                    <Node id="9" score="23.413333333333338">
+                        <SimplePredicate field="indus" operator="greaterThan" value="3.16"/>
+                    </Node>
+                </Node>
+                <Node id="5" score="18.203614457831325">
+                    <SimplePredicate field="lstat" operator="greaterThan" value="10.254999999999999"/>
+                    <Node id="10" score="19.72978723404255">
+                        <SimplePredicate field="lstat" operator="lessOrEqual" value="16.205"/>
+                    </Node>
+                    <Node id="11" score="16.21111111111112">
+                        <SimplePredicate field="lstat" operator="greaterThan" value="16.205"/>
+                    </Node>
+                </Node>
+            </Node>
+            <Node id="3" score="39.29677419354841">
+                <SimplePredicate field="rm" operator="greaterThan" value="6.772"/>
+                <Node id="6" score="36.12916666666667">
+                    <SimplePredicate field="indus" operator="lessOrEqual" value="7.470000000000001"/>
+                    <Node id="12" score="34.685714285714276">
+                        <SimplePredicate field="rm" operator="lessOrEqual" value="7.8255"/>
+                    </Node>
+                    <Node id="13" score="46.23333333333335">
+                        <SimplePredicate field="rm" operator="greaterThan" value="7.8255"/>
+                    </Node>
+                </Node>
+                <Node id="7" score="50.15714285714286">
+                    <SimplePredicate field="indus" operator="greaterThan" value="7.470000000000001"/>
+                    <Node id="14" score="41.3">
+                        <SimplePredicate field="rm" operator="lessOrEqual" value="6.962999999999999"/>
+                    </Node>
+                    <Node id="15" score="51.63333333333333">
+                        <SimplePredicate field="rm" operator="greaterThan" value="6.962999999999999"/>
+                    </Node>
+                </Node>
+            </Node>
+        </Node>
+    </TreeModel>
+</PMML>

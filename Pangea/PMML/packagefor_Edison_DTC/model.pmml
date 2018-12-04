@@ -1,0 +1,888 @@
+<PMML xmlns="http://www.dmg.org/PMML-4_2" version="4.2">
+    <Header description="Random Forest Classification">
+        <Application name="Pangea Analytics Engine" version="2.8.3.8"/>
+        <Timestamp>2018-12-03T14:08:06</Timestamp>
+    </Header>
+    <DataDictionary numberOfFields="8">
+        <DataField dataType="double" name="CCAvg" optype="continuous"/>
+        <DataField dataType="double" name="Education" optype="continuous"/>
+        <DataField dataType="double" name="Mortgage" optype="continuous"/>
+        <DataField dataType="double" name="PersonalLoan" optype="continuous"/>
+        <DataField dataType="double" name="SecuritiesAccount" optype="continuous"/>
+        <DataField dataType="double" name="CDAccount" optype="continuous"/>
+        <DataField dataType="double" name="Online1" optype="continuous"/>
+        <DataField dataType="string" name="CreditCard" optype="categorical">
+            <Value value="0"/>
+            <Value value="1"/>
+        </DataField>
+    </DataDictionary>
+    <MiningModel functionName="classification" modelName="RandomForest">
+        <MiningSchema>
+            <MiningField name="CCAvg" usageType="active"/>
+            <MiningField name="Education" usageType="active"/>
+            <MiningField name="Mortgage" usageType="active"/>
+            <MiningField name="PersonalLoan" usageType="active"/>
+            <MiningField name="SecuritiesAccount" usageType="active"/>
+            <MiningField name="CDAccount" usageType="active"/>
+            <MiningField name="Online1" usageType="active"/>
+            <MiningField name="CreditCard" usageType="predicted"/>
+        </MiningSchema>
+        <Output>
+            <OutputField dataType="string" feature="predictedValue" name="predicted_CreditCard" optype="categorical"/>
+        </Output>
+        <Segmentation multipleModelMethod="majorityVote">
+            <Segment id="1">
+                <True/>
+                <TreeModel algorithmName="RandomForest" functionName="classification" modelName="RandomForestModel" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="CCAvg" usageType="active"/>
+                        <MiningField name="Education" usageType="active"/>
+                        <MiningField name="Mortgage" usageType="active"/>
+                        <MiningField name="PersonalLoan" usageType="active"/>
+                        <MiningField name="SecuritiesAccount" usageType="active"/>
+                        <MiningField name="CDAccount" usageType="active"/>
+                        <MiningField name="Online1" usageType="active"/>
+                        <MiningField name="CreditCard" usageType="predicted"/>
+                    </MiningSchema>
+                    <Node id="1" score="0">
+                        <True/>
+                        <Node id="2" score="0">
+                            <SimplePredicate field="Education" operator="lessOrEqual" value="2.5"/>
+                            <Node id="4" score="0">
+                                <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                                <Node id="8" score="0">
+                                    <SimplePredicate field="CCAvg" operator="lessOrEqual" value="1.5"/>
+                                    <Node id="16" score="0">
+                                        <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="32" score="0">
+                                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="33" score="0">
+                                            <SimplePredicate field="CCAvg" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="17" score="0">
+                                        <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                                        <Node id="34" score="0">
+                                            <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="35" score="0">
+                                            <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                                <Node id="9" score="0">
+                                    <SimplePredicate field="CCAvg" operator="greaterThan" value="1.5"/>
+                                    <Node id="18" score="0">
+                                        <SimplePredicate field="Mortgage" operator="lessOrEqual" value="325.5"/>
+                                        <Node id="36" score="0">
+                                            <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="37" score="0">
+                                            <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="19" score="0">
+                                        <SimplePredicate field="Mortgage" operator="greaterThan" value="325.5"/>
+                                        <Node id="38" score="0">
+                                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="5.5"/>
+                                        </Node>
+                                        <Node id="39" score="0">
+                                            <SimplePredicate field="CCAvg" operator="greaterThan" value="5.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                            </Node>
+                            <Node id="5" score="1">
+                                <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                                <Node id="10" score="1">
+                                    <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                    <Node id="20" score="1">
+                                        <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                                    </Node>
+                                    <Node id="21" score="1">
+                                        <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                                        <Node id="42" score="1">
+                                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="43" score="1">
+                                            <SimplePredicate field="CCAvg" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                                <Node id="11" score="1">
+                                    <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                    <Node id="22" score="1">
+                                        <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="44" score="1">
+                                            <SimplePredicate field="Mortgage" operator="lessOrEqual" value="208.5"/>
+                                        </Node>
+                                        <Node id="45" score="0">
+                                            <SimplePredicate field="Mortgage" operator="greaterThan" value="208.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="23" score="0">
+                                        <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                                        <Node id="46" score="0">
+                                            <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="47" score="0">
+                                            <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                            </Node>
+                        </Node>
+                        <Node id="3" score="0">
+                            <SimplePredicate field="Education" operator="greaterThan" value="2.5"/>
+                            <Node id="6" score="0">
+                                <SimplePredicate field="CCAvg" operator="lessOrEqual" value="2.5"/>
+                                <Node id="12" score="0">
+                                    <SimplePredicate field="CCAvg" operator="lessOrEqual" value="1.5"/>
+                                    <Node id="24" score="0">
+                                        <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="48" score="0">
+                                            <SimplePredicate field="Mortgage" operator="lessOrEqual" value="150.5"/>
+                                        </Node>
+                                        <Node id="49" score="0">
+                                            <SimplePredicate field="Mortgage" operator="greaterThan" value="150.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="25" score="1">
+                                        <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                                        <Node id="50" score="1">
+                                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="51" score="1">
+                                            <SimplePredicate field="CCAvg" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                                <Node id="13" score="0">
+                                    <SimplePredicate field="CCAvg" operator="greaterThan" value="1.5"/>
+                                    <Node id="26" score="0">
+                                        <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="52" score="0">
+                                            <SimplePredicate field="Mortgage" operator="lessOrEqual" value="113.5"/>
+                                        </Node>
+                                        <Node id="53" score="0">
+                                            <SimplePredicate field="Mortgage" operator="greaterThan" value="113.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="27" score="1">
+                                        <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                                    </Node>
+                                </Node>
+                            </Node>
+                            <Node id="7" score="0">
+                                <SimplePredicate field="CCAvg" operator="greaterThan" value="2.5"/>
+                                <Node id="14" score="0">
+                                    <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                    <Node id="28" score="0">
+                                        <SimplePredicate field="CCAvg" operator="lessOrEqual" value="3.5"/>
+                                        <Node id="56" score="0">
+                                            <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="57" score="0">
+                                            <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="29" score="0">
+                                        <SimplePredicate field="CCAvg" operator="greaterThan" value="3.5"/>
+                                        <Node id="58" score="0">
+                                            <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="59" score="0">
+                                            <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                                <Node id="15" score="0">
+                                    <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                    <Node id="30" score="0">
+                                        <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="60" score="0">
+                                            <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="61" score="0">
+                                            <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="31" score="1">
+                                        <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                                        <Node id="62" score="1">
+                                            <SimplePredicate field="Mortgage" operator="lessOrEqual" value="325.5"/>
+                                        </Node>
+                                        <Node id="63" score="1">
+                                            <SimplePredicate field="Mortgage" operator="greaterThan" value="325.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                            </Node>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="2">
+                <True/>
+                <TreeModel algorithmName="RandomForest" functionName="classification" modelName="RandomForestModel" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="CCAvg" usageType="active"/>
+                        <MiningField name="Education" usageType="active"/>
+                        <MiningField name="Mortgage" usageType="active"/>
+                        <MiningField name="PersonalLoan" usageType="active"/>
+                        <MiningField name="SecuritiesAccount" usageType="active"/>
+                        <MiningField name="CDAccount" usageType="active"/>
+                        <MiningField name="Online1" usageType="active"/>
+                        <MiningField name="CreditCard" usageType="predicted"/>
+                    </MiningSchema>
+                    <Node id="1" score="0">
+                        <True/>
+                        <Node id="2" score="0">
+                            <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                            <Node id="4" score="0">
+                                <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                                <Node id="8" score="0">
+                                    <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                    <Node id="16" score="0">
+                                        <SimplePredicate field="CCAvg" operator="lessOrEqual" value="5.5"/>
+                                    </Node>
+                                    <Node id="17" score="0">
+                                        <SimplePredicate field="CCAvg" operator="greaterThan" value="5.5"/>
+                                        <Node id="34" score="0">
+                                            <SimplePredicate field="Mortgage" operator="lessOrEqual" value="92.5"/>
+                                        </Node>
+                                        <Node id="35" score="0">
+                                            <SimplePredicate field="Mortgage" operator="greaterThan" value="92.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                                <Node id="9" score="0">
+                                    <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                    <Node id="18" score="0">
+                                        <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="36" score="0">
+                                            <SimplePredicate field="Education" operator="lessOrEqual" value="1.5"/>
+                                        </Node>
+                                        <Node id="37" score="0">
+                                            <SimplePredicate field="Education" operator="greaterThan" value="1.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="19" score="0">
+                                        <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                    </Node>
+                                </Node>
+                            </Node>
+                            <Node id="5" score="1">
+                                <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                                <Node id="10" score="1">
+                                    <SimplePredicate field="CCAvg" operator="lessOrEqual" value="6.5"/>
+                                    <Node id="20" score="1">
+                                        <SimplePredicate field="Mortgage" operator="lessOrEqual" value="249.5"/>
+                                        <Node id="40" score="1">
+                                            <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="41" score="1">
+                                            <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="21" score="1">
+                                        <SimplePredicate field="Mortgage" operator="greaterThan" value="249.5"/>
+                                        <Node id="42" score="1">
+                                            <SimplePredicate field="Education" operator="lessOrEqual" value="2.5"/>
+                                        </Node>
+                                        <Node id="43" score="1">
+                                            <SimplePredicate field="Education" operator="greaterThan" value="2.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                                <Node id="11" score="1">
+                                    <SimplePredicate field="CCAvg" operator="greaterThan" value="6.5"/>
+                                    <Node id="22" score="1">
+                                        <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                    </Node>
+                                    <Node id="23" score="1">
+                                        <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                    </Node>
+                                </Node>
+                            </Node>
+                        </Node>
+                        <Node id="3" score="0">
+                            <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                            <Node id="6" score="0">
+                                <SimplePredicate field="CCAvg" operator="lessOrEqual" value="6.5"/>
+                                <Node id="12" score="0">
+                                    <SimplePredicate field="Education" operator="lessOrEqual" value="1.5"/>
+                                    <Node id="24" score="0">
+                                        <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="48" score="0">
+                                            <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="49" score="1">
+                                            <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="25" score="0">
+                                        <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                        <Node id="50" score="0">
+                                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="1.5"/>
+                                        </Node>
+                                        <Node id="51" score="0">
+                                            <SimplePredicate field="CCAvg" operator="greaterThan" value="1.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                                <Node id="13" score="0">
+                                    <SimplePredicate field="Education" operator="greaterThan" value="1.5"/>
+                                    <Node id="26" score="0">
+                                        <SimplePredicate field="CCAvg" operator="lessOrEqual" value="5.5"/>
+                                        <Node id="52" score="0">
+                                            <SimplePredicate field="Education" operator="lessOrEqual" value="2.5"/>
+                                        </Node>
+                                        <Node id="53" score="0">
+                                            <SimplePredicate field="Education" operator="greaterThan" value="2.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="27" score="1">
+                                        <SimplePredicate field="CCAvg" operator="greaterThan" value="5.5"/>
+                                        <Node id="54" score="0">
+                                            <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="55" score="1">
+                                            <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                            </Node>
+                            <Node id="7" score="0">
+                                <SimplePredicate field="CCAvg" operator="greaterThan" value="6.5"/>
+                            </Node>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="3">
+                <True/>
+                <TreeModel algorithmName="RandomForest" functionName="classification" modelName="RandomForestModel" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="CCAvg" usageType="active"/>
+                        <MiningField name="Education" usageType="active"/>
+                        <MiningField name="Mortgage" usageType="active"/>
+                        <MiningField name="PersonalLoan" usageType="active"/>
+                        <MiningField name="SecuritiesAccount" usageType="active"/>
+                        <MiningField name="CDAccount" usageType="active"/>
+                        <MiningField name="Online1" usageType="active"/>
+                        <MiningField name="CreditCard" usageType="predicted"/>
+                    </MiningSchema>
+                    <Node id="1" score="0">
+                        <True/>
+                        <Node id="2" score="0">
+                            <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                            <Node id="4" score="0">
+                                <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                                <Node id="8" score="0">
+                                    <SimplePredicate field="Mortgage" operator="lessOrEqual" value="325.5"/>
+                                    <Node id="16" score="0">
+                                        <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="32" score="0">
+                                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="1.5"/>
+                                        </Node>
+                                        <Node id="33" score="0">
+                                            <SimplePredicate field="CCAvg" operator="greaterThan" value="1.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="17" score="0">
+                                        <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                        <Node id="34" score="0">
+                                            <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="35" score="0">
+                                            <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                                <Node id="9" score="0">
+                                    <SimplePredicate field="Mortgage" operator="greaterThan" value="325.5"/>
+                                    <Node id="18" score="0">
+                                        <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="36" score="0">
+                                            <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="37" score="0">
+                                            <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="19" score="0">
+                                        <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                        <Node id="38" score="0">
+                                            <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="39" score="0">
+                                            <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                            </Node>
+                            <Node id="5" score="0">
+                                <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                                <Node id="10" score="0">
+                                    <SimplePredicate field="Mortgage" operator="lessOrEqual" value="37.5"/>
+                                    <Node id="20" score="0">
+                                        <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="40" score="0">
+                                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="1.5"/>
+                                        </Node>
+                                        <Node id="41" score="0">
+                                            <SimplePredicate field="CCAvg" operator="greaterThan" value="1.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="21" score="0">
+                                        <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                    </Node>
+                                </Node>
+                                <Node id="11" score="0">
+                                    <SimplePredicate field="Mortgage" operator="greaterThan" value="37.5"/>
+                                    <Node id="22" score="0">
+                                        <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="44" score="0">
+                                            <SimplePredicate field="Mortgage" operator="lessOrEqual" value="129.5"/>
+                                        </Node>
+                                        <Node id="45" score="0">
+                                            <SimplePredicate field="Mortgage" operator="greaterThan" value="129.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="23" score="0">
+                                        <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                    </Node>
+                                </Node>
+                            </Node>
+                        </Node>
+                        <Node id="3" score="1">
+                            <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                            <Node id="6" score="1">
+                                <SimplePredicate field="Mortgage" operator="lessOrEqual" value="76.5"/>
+                                <Node id="12" score="1">
+                                    <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                    <Node id="24" score="1">
+                                        <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                                    </Node>
+                                    <Node id="25" score="1">
+                                        <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                                        <Node id="50" score="1">
+                                            <SimplePredicate field="Mortgage" operator="lessOrEqual" value="37.5"/>
+                                        </Node>
+                                        <Node id="51" score="0">
+                                            <SimplePredicate field="Mortgage" operator="greaterThan" value="37.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                                <Node id="13" score="1">
+                                    <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                    <Node id="26" score="1">
+                                        <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="52" score="1">
+                                            <SimplePredicate field="Education" operator="lessOrEqual" value="2.5"/>
+                                        </Node>
+                                        <Node id="53" score="1">
+                                            <SimplePredicate field="Education" operator="greaterThan" value="2.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="27" score="0">
+                                        <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                                        <Node id="54" score="1">
+                                            <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="55" score="0">
+                                            <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                            </Node>
+                            <Node id="7" score="1">
+                                <SimplePredicate field="Mortgage" operator="greaterThan" value="76.5"/>
+                                <Node id="14" score="1">
+                                    <SimplePredicate field="CCAvg" operator="lessOrEqual" value="2.5"/>
+                                    <Node id="28" score="1">
+                                        <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                    </Node>
+                                    <Node id="29" score="1">
+                                        <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                        <Node id="58" score="1">
+                                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="59" score="1">
+                                            <SimplePredicate field="CCAvg" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                                <Node id="15" score="1">
+                                    <SimplePredicate field="CCAvg" operator="greaterThan" value="2.5"/>
+                                    <Node id="30" score="1">
+                                        <SimplePredicate field="Education" operator="lessOrEqual" value="1.5"/>
+                                    </Node>
+                                    <Node id="31" score="0">
+                                        <SimplePredicate field="Education" operator="greaterThan" value="1.5"/>
+                                        <Node id="62" score="0">
+                                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="4.5"/>
+                                        </Node>
+                                        <Node id="63" score="1">
+                                            <SimplePredicate field="CCAvg" operator="greaterThan" value="4.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                            </Node>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="4">
+                <True/>
+                <TreeModel algorithmName="RandomForest" functionName="classification" modelName="RandomForestModel" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="CCAvg" usageType="active"/>
+                        <MiningField name="Education" usageType="active"/>
+                        <MiningField name="Mortgage" usageType="active"/>
+                        <MiningField name="PersonalLoan" usageType="active"/>
+                        <MiningField name="SecuritiesAccount" usageType="active"/>
+                        <MiningField name="CDAccount" usageType="active"/>
+                        <MiningField name="Online1" usageType="active"/>
+                        <MiningField name="CreditCard" usageType="predicted"/>
+                    </MiningSchema>
+                    <Node id="1" score="0">
+                        <True/>
+                        <Node id="2" score="0">
+                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="1.5"/>
+                            <Node id="4" score="0">
+                                <SimplePredicate field="Education" operator="lessOrEqual" value="1.5"/>
+                                <Node id="8" score="0">
+                                    <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                                    <Node id="16" score="0">
+                                        <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="32" score="0">
+                                            <SimplePredicate field="Mortgage" operator="lessOrEqual" value="96.5"/>
+                                        </Node>
+                                        <Node id="33" score="0">
+                                            <SimplePredicate field="Mortgage" operator="greaterThan" value="96.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="17" score="0">
+                                        <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                                        <Node id="34" score="0">
+                                            <SimplePredicate field="Mortgage" operator="lessOrEqual" value="37.5"/>
+                                        </Node>
+                                        <Node id="35" score="0">
+                                            <SimplePredicate field="Mortgage" operator="greaterThan" value="37.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                                <Node id="9" score="1">
+                                    <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                                    <Node id="18" score="1">
+                                        <SimplePredicate field="CCAvg" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="36" score="1">
+                                            <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="37" score="1">
+                                            <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="19" score="1">
+                                        <SimplePredicate field="CCAvg" operator="greaterThan" value="0.5"/>
+                                        <Node id="38" score="1">
+                                            <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="39" score="0">
+                                            <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                            </Node>
+                            <Node id="5" score="0">
+                                <SimplePredicate field="Education" operator="greaterThan" value="1.5"/>
+                                <Node id="10" score="0">
+                                    <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                                    <Node id="20" score="0">
+                                        <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="40" score="0">
+                                            <SimplePredicate field="Education" operator="lessOrEqual" value="2.5"/>
+                                        </Node>
+                                        <Node id="41" score="0">
+                                            <SimplePredicate field="Education" operator="greaterThan" value="2.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="21" score="0">
+                                        <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                                        <Node id="42" score="0">
+                                            <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="43" score="0">
+                                            <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                                <Node id="11" score="1">
+                                    <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                                    <Node id="22" score="1">
+                                        <SimplePredicate field="Mortgage" operator="lessOrEqual" value="37.5"/>
+                                        <Node id="44" score="1">
+                                            <SimplePredicate field="Education" operator="lessOrEqual" value="2.5"/>
+                                        </Node>
+                                        <Node id="45" score="1">
+                                            <SimplePredicate field="Education" operator="greaterThan" value="2.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="23" score="1">
+                                        <SimplePredicate field="Mortgage" operator="greaterThan" value="37.5"/>
+                                    </Node>
+                                </Node>
+                            </Node>
+                        </Node>
+                        <Node id="3" score="0">
+                            <SimplePredicate field="CCAvg" operator="greaterThan" value="1.5"/>
+                            <Node id="6" score="0">
+                                <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                <Node id="12" score="0">
+                                    <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                                    <Node id="24" score="0">
+                                        <SimplePredicate field="Mortgage" operator="lessOrEqual" value="175.5"/>
+                                        <Node id="48" score="0">
+                                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="3.5"/>
+                                        </Node>
+                                        <Node id="49" score="0">
+                                            <SimplePredicate field="CCAvg" operator="greaterThan" value="3.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="25" score="0">
+                                        <SimplePredicate field="Mortgage" operator="greaterThan" value="175.5"/>
+                                        <Node id="50" score="0">
+                                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="2.5"/>
+                                        </Node>
+                                        <Node id="51" score="0">
+                                            <SimplePredicate field="CCAvg" operator="greaterThan" value="2.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                                <Node id="13" score="1">
+                                    <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                                    <Node id="26" score="1">
+                                        <SimplePredicate field="Mortgage" operator="lessOrEqual" value="76.5"/>
+                                        <Node id="52" score="1">
+                                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="6.5"/>
+                                        </Node>
+                                        <Node id="53" score="1">
+                                            <SimplePredicate field="CCAvg" operator="greaterThan" value="6.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="27" score="1">
+                                        <SimplePredicate field="Mortgage" operator="greaterThan" value="76.5"/>
+                                    </Node>
+                                </Node>
+                            </Node>
+                            <Node id="7" score="0">
+                                <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                <Node id="14" score="0">
+                                    <SimplePredicate field="Education" operator="lessOrEqual" value="1.5"/>
+                                    <Node id="28" score="0">
+                                        <SimplePredicate field="Mortgage" operator="lessOrEqual" value="249.5"/>
+                                        <Node id="56" score="0">
+                                            <SimplePredicate field="Mortgage" operator="lessOrEqual" value="129.5"/>
+                                        </Node>
+                                        <Node id="57" score="0">
+                                            <SimplePredicate field="Mortgage" operator="greaterThan" value="129.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="29" score="1">
+                                        <SimplePredicate field="Mortgage" operator="greaterThan" value="249.5"/>
+                                        <Node id="58" score="1">
+                                            <SimplePredicate field="Mortgage" operator="lessOrEqual" value="325.5"/>
+                                        </Node>
+                                        <Node id="59" score="0">
+                                            <SimplePredicate field="Mortgage" operator="greaterThan" value="325.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                                <Node id="15" score="0">
+                                    <SimplePredicate field="Education" operator="greaterThan" value="1.5"/>
+                                    <Node id="30" score="0">
+                                        <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="60" score="0">
+                                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="8.5"/>
+                                        </Node>
+                                        <Node id="61" score="0">
+                                            <SimplePredicate field="CCAvg" operator="greaterThan" value="8.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="31" score="0">
+                                        <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                        <Node id="62" score="0">
+                                            <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="63" score="0">
+                                            <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                            </Node>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="5">
+                <True/>
+                <TreeModel algorithmName="RandomForest" functionName="classification" modelName="RandomForestModel" splitCharacteristic="multiSplit">
+                    <MiningSchema>
+                        <MiningField name="CCAvg" usageType="active"/>
+                        <MiningField name="Education" usageType="active"/>
+                        <MiningField name="Mortgage" usageType="active"/>
+                        <MiningField name="PersonalLoan" usageType="active"/>
+                        <MiningField name="SecuritiesAccount" usageType="active"/>
+                        <MiningField name="CDAccount" usageType="active"/>
+                        <MiningField name="Online1" usageType="active"/>
+                        <MiningField name="CreditCard" usageType="predicted"/>
+                    </MiningSchema>
+                    <Node id="1" score="0">
+                        <True/>
+                        <Node id="2" score="0">
+                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="0.5"/>
+                            <Node id="4" score="0">
+                                <SimplePredicate field="Mortgage" operator="lessOrEqual" value="82.5"/>
+                                <Node id="8" score="0">
+                                    <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                    <Node id="16" score="0">
+                                        <SimplePredicate field="Mortgage" operator="lessOrEqual" value="77.5"/>
+                                        <Node id="32" score="0">
+                                            <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="33" score="1">
+                                            <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="17" score="1">
+                                        <SimplePredicate field="Mortgage" operator="greaterThan" value="77.5"/>
+                                    </Node>
+                                </Node>
+                                <Node id="9" score="0">
+                                    <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                    <Node id="18" score="0">
+                                        <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="36" score="0">
+                                            <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="37" score="0">
+                                            <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="19" score="0">
+                                        <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                                        <Node id="38" score="1">
+                                            <SimplePredicate field="Education" operator="lessOrEqual" value="1.5"/>
+                                        </Node>
+                                        <Node id="39" score="0">
+                                            <SimplePredicate field="Education" operator="greaterThan" value="1.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                            </Node>
+                            <Node id="5" score="0">
+                                <SimplePredicate field="Mortgage" operator="greaterThan" value="82.5"/>
+                                <Node id="10" score="0">
+                                    <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                                    <Node id="20" score="0">
+                                        <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="40" score="0">
+                                            <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="41" score="0">
+                                            <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="21" score="0">
+                                        <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                    </Node>
+                                </Node>
+                                <Node id="11" score="1">
+                                    <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                                </Node>
+                            </Node>
+                        </Node>
+                        <Node id="3" score="0">
+                            <SimplePredicate field="CCAvg" operator="greaterThan" value="0.5"/>
+                            <Node id="6" score="0">
+                                <SimplePredicate field="CDAccount" operator="lessOrEqual" value="0.5"/>
+                                <Node id="12" score="0">
+                                    <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                                    <Node id="24" score="0">
+                                        <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="48" score="0">
+                                            <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="49" score="0">
+                                            <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="25" score="0">
+                                        <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                        <Node id="50" score="0">
+                                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="1.5"/>
+                                        </Node>
+                                        <Node id="51" score="0">
+                                            <SimplePredicate field="CCAvg" operator="greaterThan" value="1.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                                <Node id="13" score="0">
+                                    <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                                    <Node id="26" score="0">
+                                        <SimplePredicate field="CCAvg" operator="lessOrEqual" value="4.5"/>
+                                        <Node id="52" score="0">
+                                            <SimplePredicate field="Online1" operator="lessOrEqual" value="0.5"/>
+                                        </Node>
+                                        <Node id="53" score="0">
+                                            <SimplePredicate field="Online1" operator="greaterThan" value="0.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="27" score="0">
+                                        <SimplePredicate field="CCAvg" operator="greaterThan" value="4.5"/>
+                                    </Node>
+                                </Node>
+                            </Node>
+                            <Node id="7" score="1">
+                                <SimplePredicate field="CDAccount" operator="greaterThan" value="0.5"/>
+                                <Node id="14" score="1">
+                                    <SimplePredicate field="SecuritiesAccount" operator="lessOrEqual" value="0.5"/>
+                                    <Node id="28" score="1">
+                                        <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                    </Node>
+                                    <Node id="29" score="1">
+                                        <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                        <Node id="58" score="1">
+                                            <SimplePredicate field="CCAvg" operator="lessOrEqual" value="4.5"/>
+                                        </Node>
+                                        <Node id="59" score="1">
+                                            <SimplePredicate field="CCAvg" operator="greaterThan" value="4.5"/>
+                                        </Node>
+                                    </Node>
+                                </Node>
+                                <Node id="15" score="1">
+                                    <SimplePredicate field="SecuritiesAccount" operator="greaterThan" value="0.5"/>
+                                    <Node id="30" score="1">
+                                        <SimplePredicate field="PersonalLoan" operator="lessOrEqual" value="0.5"/>
+                                        <Node id="60" score="1">
+                                            <SimplePredicate field="Education" operator="lessOrEqual" value="1.5"/>
+                                        </Node>
+                                        <Node id="61" score="1">
+                                            <SimplePredicate field="Education" operator="greaterThan" value="1.5"/>
+                                        </Node>
+                                    </Node>
+                                    <Node id="31" score="0">
+                                        <SimplePredicate field="PersonalLoan" operator="greaterThan" value="0.5"/>
+                                    </Node>
+                                </Node>
+                            </Node>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+        </Segmentation>
+    </MiningModel>
+</PMML>

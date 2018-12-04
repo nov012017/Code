@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Action Id="E1002" NextId="E1004" PreviousId="E1001">
+  <Property Name="remoteIP">10.119.77.241</Property>
+  <Property Name="remoteUserName">practice</Property>
+  <Property Name="remotePassword">Practice@123</Property>
+  <Property Name="remotePath">/home/practice</Property>
+</Action>
