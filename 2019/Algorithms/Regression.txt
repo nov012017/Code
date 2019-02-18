@@ -1,0 +1,12 @@
+Regression is driven by three condition (Independent variables, Type of dependedent variable and shape of regression line) 	
+
+Metrics:
+https://www.analyticsvidhya.com/blog/2016/02/7-important-model-evaluation-error-metrics/
+Regression:
+https://www.analyticsvidhya.com/blog/2015/08/comprehensive-guide-regression/
+
+Bias vs Variance trade off:
+https://towardsdatascience.com/understanding-the-bias-variance-tradeoff-165e6942b229
+
+Linear Regression:
+https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/
