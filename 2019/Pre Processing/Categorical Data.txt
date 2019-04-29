@@ -1,0 +1,27 @@
+https://towardsdatascience.com/understanding-feature-engineering-part-2-categorical-data-f54324193e63
+Label Encoding
+
+One Hot Encoding
+
+Dummy Coding
+
+Effect Coding
+gen_onehot_features = pd.get_dummies(poke_df['Generation'])
+gen_effect_features = gen_onehot_features.iloc[:,:-1]
+gen_effect_features.loc[np.all(gen_effect_features == 0, 
+                               axis=1)] = -1.
+pd.concat([poke_df[['Name', 'Generation']], gen_effect_features], 
+          axis=1).iloc[4:10]
+
+Bin counting
+-> Using Business Logis
+-> Using Frequency or Response Rate
+
+Hash coding
+from sklearn.feature_extraction import FeatureHasher
+fh = FeatureHasher(n_features=6, input_type='string')
+hashed_features = fh.fit_transform(vg_df['Genre'])
+hashed_features = hashed_features.toarray()
+pd.concat([vg_df[['Name', 'Genre']], pd.DataFrame(hashed_features)], 
+          axis=1).iloc[1:7]
+
