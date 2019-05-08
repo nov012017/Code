@@ -1,1 +1,9 @@
 https://www.udemy.com/mastering-nlp-with-deep-learning-in-keras/learn/v4/content
+
+https://www.udemy.com/zero-to-deep-learning/learn/v4/content
+
+https://www.udemy.com/deploy-data-science-nlp-models-with-docker-containers/learn/v4/t/practice/1042312
+
+https://www.udemy.com/natural-language-processing-in-python-a-complete-guide/learn/v4/content
+
+https://www.udemy.com/master-computer-vision-with-opencv-in-python/learn/v4/overview
