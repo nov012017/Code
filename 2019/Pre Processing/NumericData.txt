@@ -1,3 +1,6 @@
+https://www.statisticssolutions.com/transforming-data-for-normality/
+The above link has image stating when to use which type of transform to make it normal
+
 Counts
 Binarization - example listen count
 Rounding - By multiplying with 10 or 100
@@ -32,6 +35,15 @@ Statistical Transformations
 			positive (similar to what log transform expects). In case they are negative, 
 			shifting using a constant value helps. Mathematically, the Box-Cox transform function can be 
 			denoted as follows.
+scipy.stats.boxcox() API
+Below are some common values for lambda:
+
+lambda = -1. is a reciprocal transform.
+lambda = -0.5 is a reciprocal square root transform.
+lambda = 0.0 is a log transform.
+lambda = 0.5 is a square root transform.
+lambda = 1.0 is no transform.
+
 income = np.array(fcc_survey_df['Income'])
 income_clean = income[~np.isnan(income)]
 l, opt_lambda = spstats.boxcox(income_clean)
