@@ -1,4 +1,5 @@
 https://towardsdatascience.com/understanding-feature-engineering-part-2-categorical-data-f54324193e63
+
 Label Encoding
 
 One Hot Encoding
