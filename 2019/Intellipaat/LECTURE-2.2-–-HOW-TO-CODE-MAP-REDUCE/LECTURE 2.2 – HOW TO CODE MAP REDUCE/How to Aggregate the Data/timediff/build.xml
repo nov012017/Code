@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Time Difference" default="archive" basedir=".">
+
+	<description>
+          Hadoop Programming Assignment 
+	</description>
+
+	<property file="build.properties" />
+	
+	<target name="clean" description="Delete old build and dist directories">
+		<delete dir="${dist.home}" />
+		<delete dir="${build.home}" />
+	</target>
+
+	<target name="init" description="Create build directory">
+		<mkdir dir="${build.home}" />
+	</target>
+
+	<target name="compile" depends="init" description="Compile Java sources">
+		<javac srcdir="${source.home}" destdir="${build.home}" debug="${compile.debug}" deprecation="${compile.deprecation}" optimize="${compile.optimize}" source="1.6" target="1.6">
+			<classpath>
+				<path>
+					<fileset dir="${hadoop.lib}" />
+				</path>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="archive" depends="compile" description="Create binary archive of all files in dist.home">
+		<jar jarfile="${app.name}.jar" basedir="${build.home}" manifest="${manifest.home}/MANIFEST.MF" />
+	</target>
+</project>
