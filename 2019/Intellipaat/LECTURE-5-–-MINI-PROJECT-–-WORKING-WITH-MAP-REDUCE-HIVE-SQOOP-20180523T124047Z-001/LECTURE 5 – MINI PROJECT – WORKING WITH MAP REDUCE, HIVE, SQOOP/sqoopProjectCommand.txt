@@ -1,0 +1,67 @@
+Exercise 5:
+
+
+MySQL -->  Sqoop --> HDFS --> Hive and writing sql Queries...
+
+Self Exlanatory...
+
+
+
+
+Answer few questions
+
+, Okay, we successfully got data from MySQL to hadoop.. And from MySQL data is stored in Hadoop at which folder ??
+
+2: Okay we got data from Mysql and we found that there were x number of rows in mysql table .. what is x ??
+
+
+Before you start, please run this command ( Is not in PDF )
+
+
+sudo service mysqld start  
+And go on and complete exercise 5.
+
+You have 30 Mins.  to do so...
+
+
+\ is your way of saying "My command is not complete but I wish to go to next line"
+
+
+So if u r typing the entire thing in one line avoid\
+
+
+How will sqoop understand where in my hdfs file system $>  sqoop import \ --connect jdbc:mysql://localhost/training_db \  --table user_log   --fields--terminated--by '\t' \ --m 1 --username root  --password  root
+
+
+The point is hadoop is installed on ur machine and sqoop searches for hadoop config files ... there it finds oh hadoop in on localhost and then runs on the localhost
+
+
+should sqoop and Hadoop be on the same machine ??
+
+Not at all .. But on your VM they have to be bcoz its a single node set up...
+
+if you see sqoop connecting to HDFS its as good as tnsnames.ora
+
+
+hadoop fs -ls  --->  And you may find ur answer 
+
+500000 rows that got transported 
+
+
+
+
+Exercise 4:  In real world , when you code a map reduce. This is what the flow looks like 
+
+--> write your Java code
+--> Bundle the same as a jar file --> Bundle it as jar file 
+--> submit it to Hadoop cluster --> Run the job and see the output 
+
+
+we will create an input folder in HDFS --> Input Folder
+
+we will dump some data in HDFS -->  Input Data
+
+we bundle our code as a jar in eclipse 
+
+we finally run the code to get the output 
+
