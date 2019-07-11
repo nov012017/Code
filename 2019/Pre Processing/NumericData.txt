@@ -1,6 +1,9 @@
 https://www.statisticssolutions.com/transforming-data-for-normality/
 The above link has image stating when to use which type of transform to make it normal
-
+Correlation:
+	1) Collinearity Matrix
+	2) Variance Inflation Factor (<=4 No corrlation , >=10 Serious Correlation)
+	3) Using L1 and L2 Regularization technique
 Counts
 Binarization - example listen count
 Rounding - By multiplying with 10 or 100
@@ -65,3 +68,14 @@ fcc_survey_df['Income_boxcox_lambda_opt'] = spstats.boxcox(
 fcc_survey_df[['ID.x', 'Age', 'Income', 'Income_log', 
                'Income_boxcox_lambda_0',       
                'Income_boxcox_lambda_opt']].iloc[4:9]
+
+
+------------------------------------
+
+we should add more data points if we suffering from High Variance
+We should add more features if we are suffering from High Bias
+
+___________________________________
+Cost Sensitive Learning
+from sklearn.utils.class_weight import compute_class_weight
+class_weights = compute_class_weight('balanced', np.unique(y), y)
