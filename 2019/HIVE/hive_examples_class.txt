@@ -1,3 +1,9 @@
+HOW TO KNOW WHICH DATABASE WE ARE IN?
+---------------------------------------------
+set.hive.cli.print.current.db=True;
+
+
+
 HOW TO CREATE DATABASE
 -----------------------------
 CREATE DATABASE IF NOT EXISTS kalyan;
@@ -79,7 +85,9 @@ DESCRIBE EXTENDED tbl_name;
 DESCRIBE FORMATTED tbl_name;
 
 
-
+ALTER TABLE:
+-----------------------------
+Alter table Dept rename to Dept1
 
 
 LOAD DATA LOCAL INPATH '/home/orienit/work/hive_inputs/student.txt' OVERWRITE INTO TABLE student1;
