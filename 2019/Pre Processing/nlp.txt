@@ -1,0 +1,9 @@
+Lower Case
+Stop Words
+Stmming/Lemmatization
+POS Tagging
+Normalization (guuud, gud, otw, b4, toomorow, :)
+Noise ( Special characters, Digits
+Counts (words, sentences, stop words, punctuations 
+TF IDF
+Word2Vec
