@@ -1,1 +1,5 @@
 https://nlpforhackers.io/complete-guide-to-spacy/
+
+http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/
+
+https://towardsdatascience.com/multi-class-text-classification-model-comparison-and-selection-5eb066197568
