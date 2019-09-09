@@ -11,7 +11,7 @@ from flask import Flask,abort,jsonify,request
 import _pickle as pickle
 
 #loading a model from a file called model.pkl
-pickle_in = open("C:\\Users\\Admin\\Documents\\GitHub\\Code\\Projects\\WineQuality\\model.pickle","rb")
+pickle_in = open("C:\\Users\\prudi\\Documents\\GitHub\\Code\\Projects\\WineQuality\\model.pickle_sep_2019","rb")
 example_dict = pickle.load(pickle_in)
 
 app=Flask(__name__)
