@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <title>Loan Prediction</title>
+  </head>
+
+  <body>
+    <h1><div style="text-align:center"><font color="blue">Loan prediction</font></div></h1>
+    <hr>
+    </br>
+    <h2><div style="text-align:center">Enter the values for all the fields</div></h2>
+    </br>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-6'>
+          <form method="POST" action="/predict">
+            <div class="form-group">
+              <label for="CoapplicantIncome"><p class="font-weight-bold">CoapplicantIncome</p></label>
+              <input type="text" name="CoapplicantIncome">
+              <small id="CoapplicantIncomeHelp" class="form-text text-muted">Enter 1 if the state selected is New York else enter 0</small>
+              </div>
+
+              <div class="form-group">
+                <label for="Loan_Amount_Term"><p class="font-weight-bold">Loan_Amount_Term</p></label>
+                <input type="text" name="Loan_Amount_Term">
+                <small id="Loan_Amount_TermHelp" class="form-text text-muted">Enter 1 if the state selected is New York else enter 0</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="ApplicantIncome_minmax"><p class="font-weight-bold">ApplicantIncome_minmax</p></label>
+                  <input type="text" name="ApplicantIncome_minmax">
+                  <small id="ApplicantIncome_minmaxHelp" class="form-text text-muted">Enter 1 if the state selected is New York else enter 0</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="LoanAmount_minmax"><p class="font-weight-bold">LoanAmount_minmax</p></label>
+                    <input type="text" name="LoanAmount_minmax">
+                    <small id="LoanAmount_minmaxHelp" class="form-text text-muted">Enter the value for RnD Spend</small>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Married_0"><p class="font-weight-bold">Married_0</p></label>
+                      <input type="text" name="Married_0">
+                      <small id="Married_0Help" class="form-text text-muted">Enter the value for Admin Spend</small>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="Gender_0"><p class="font-weight-bold">Gender_0</p></label>
+                        <input type="text" name="Gender_0">
+                        <small id="Gender_0Help" class="form-text text-muted">Enter the dollar amount for Market Spend</small>
+                        </div>
+						
+					<div class="form-group">
+                        <label for="Gender_1"><p class="font-weight-bold">Gender_1</p></label>
+                        <input type="text" name="Gender_1">
+                        <small id="Gender_1Help" class="form-text text-muted">Enter the dollar amount for Market Spend</small>
+                        </div>
+						
+					<div class="form-group">
+                        <label for="Gender_2"><p class="font-weight-bold">Gender_2</p></label>
+                        <input type="text" name="Gender_2">
+                        <small id="Gender_2Help" class="form-text text-muted">Enter the dollar amount for Market Spend</small>
+                        </div>
+					
+					<div class="form-group">
+                        <label for="Education_0"><p class="font-weight-bold">Education_0</p></label>
+                        <input type="text" name="Education_0">
+                        <small id="Education_0Help" class="form-text text-muted">Enter the dollar amount for Market Spend</small>
+                        </div>
+					
+					<div class="form-group">
+                        <label for="Property_Area_0"><p class="font-weight-bold">Property_Area_0</p></label>
+                        <input type="text" name="Property_Area_0">
+                        <small id="Property_Area_0Help" class="form-text text-muted">Enter the dollar amount for Market Spend</small>
+                        </div>
+					
+					<div class="form-group">
+                        <label for="Loan_Status_0"><p class="font-weight-bold">Loan_Status_0</p></label>
+                        <input type="text" name="Loan_Status_0">
+                        <small id="Loan_Status_0Help" class="form-text text-muted">Enter the dollar amount for Market Spend</small>
+                        </div>
+					
+					<div class="form-group">
+                        <label for="Dependents_0"><p class="font-weight-bold">Dependents_0</p></label>
+                        <input type="text" name="Dependents_0">
+                        <small id="Dependents_0Help" class="form-text text-muted">Enter the dollar amount for Market Spend</small>
+                        </div>
+
+                        <input class='btn btn-primary' type='submit' value='Submit'>
+            </form>
+
+          </div>
+          </div>
+          </div>
+  </body>
+
+</html>
