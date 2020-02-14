@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Loan Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Loan Prediction Application</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+		<div class="form-group">
+              <label for="Gender"><p class="font-weight-bold">Gender</p></label>
+			  <input type="text" name="Gender" placeholder="Gender" required="required" >
+              <small id="Gender" class="form-text text-muted">Please Enter Gender - 'Male', 'Female', 'Transgender</small>
+        </div>
+        <div class="form-group">
+              <label for="Married"><p class="font-weight-bold">Married</p></label>
+			  <input type="text" name="Married" placeholder="Married" required="required" >
+              <small id="Married" class="form-text text-muted">Please Enter Married - Yes, No</small>
+        </div>
+		<div class="form-group">
+              <label for="Dependents"><p class="font-weight-bold">Dependents</p></label>
+			  <input type="text" name="Dependents" placeholder="Dependents" required="required" >
+              <small id="Dependents" class="form-text text-muted">Please Enter Dependents - 0,1,2,3,3+</small>
+        </div>
+		<div class="form-group">
+              <label for="Education"><p class="font-weight-bold">Education</p></label>
+			  <input type="text" name="Education" placeholder="Education" required="required" >
+              <small id="Education" class="form-text text-muted">Please Enter Education - 'Not Graduate', 'Graduate'</small>
+        </div>
+		<div class="form-group">
+              <label for="Self_Employed"><p class="font-weight-bold">Self_Employed</p></label>
+			  <input type="text" name="Self_Employed" placeholder="Self_Employed" required="required" >
+              <small id="Self_Employed" class="form-text text-muted">Please Enter Self_Employed - Yes, No</small>
+        </div>
+		<div class="form-group">
+              <label for="ApplicantIncome"><p class="font-weight-bold">ApplicantIncome</p></label>
+			  <input type="text" name="ApplicantIncome" placeholder="ApplicantIncome" required="required" >
+              <small id="ApplicantIncome" class="form-text text-muted">Please Enter ApplicantIncome</small>
+        </div>
+		<div class="form-group">
+              <label for="CoapplicantIncome"><p class="font-weight-bold">CoapplicantIncome</p></label>
+			  <input type="text" name="CoapplicantIncome" placeholder="CoapplicantIncome" required="required" >
+              <small id="CoapplicantIncome" class="form-text text-muted">Please Enter CoapplicantIncome</small>
+        </div>
+		<div class="form-group">
+              <label for="LoanAmount"><p class="font-weight-bold">LoanAmount</p></label>
+			  <input type="text" name="LoanAmount" placeholder="LoanAmount" required="required" >
+              <small id="LoanAmount" class="form-text text-muted">Please Enter LoanAmount</small>
+        </div>
+		<div class="form-group">
+              <label for="Loan_Amount_Term"><p class="font-weight-bold">Loan_Amount_Term</p></label>
+			  <input type="text" name="Loan_Amount_Term" placeholder="Loan_Amount_Term" required="required" >
+              <small id="Loan_Amount_Term" class="form-text text-muted">Please Enter Loan_Amount_Term</small>
+        </div>
+		<div class="form-group">
+              <label for="Credit_History"><p class="font-weight-bold">Credit_History</p></label>
+			  <input type="text" name="Credit_History" placeholder="Credit_History" required="required" >
+              <small id="Credit_History" class="form-text text-muted">Please Enter Credit_History - 1,0</small>
+        </div>
+		<div class="form-group">
+              <label for="Property_Area"><p class="font-weight-bold">Property_Area</p></label>
+			  <input type="text" name="Property_Area" placeholder="Property_Area" required="required" >
+              <small id="Property_Area" class="form-text text-muted">Please Enter Property_Area - 'Urban', 'Rural', 'Semiurban'</small>
+        </div>
+		
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
